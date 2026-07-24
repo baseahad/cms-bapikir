@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" color-interpolation="sRGB"/>
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f4f4f5"/>
+    </linearGradient>
+    <linearGradient id="accent-bar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#2d2d4a"/>
+    </linearGradient>
+    <linearGradient id="phone-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0d0d1a"/>
+    </linearGradient>
+    <filter id="phone-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="20" flood-color="#1a1a2e" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="8" flood-color="#1a1a2e" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle accent bar at top -->
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accent-bar)"/>
+
+  <!-- Decorative elements -->
+  <circle cx="100" cy="100" r="180" fill="#1a1a2e" opacity="0.02"/>
+  <circle cx="1100" cy="500" r="200" fill="#1a1a2e" opacity="0.02"/>
+
+  <!-- Grid dots subtle pattern -->
+  <g opacity="0.03">
+    <circle cx="40" cy="40" r="2" fill="#1a1a2e"/>
+    <circle cx="140" cy="40" r="2" fill="#1a1a2e"/>
+    <circle cx="240" cy="40" r="2" fill="#1a1a2e"/>
+    <circle cx="40" cy="140" r="2" fill="#1a1a2e"/>
+    <circle cx="140" cy="140" r="2" fill="#1a1a2e"/>
+    <circle cx="240" cy="140" r="2" fill="#1a1a2e"/>
+    <circle cx="40" cy="240" r="2" fill="#1a1a2e"/>
+    <circle cx="140" cy="240" r="2" fill="#1a1a2e"/>
+    <circle cx="240" cy="240" r="2" fill="#1a1a2e"/>
+  </g>
+
+  <!-- Left side: Text -->
+  <g transform="translate(60, 90)">
+    <!-- Category label -->
+    <rect x="0" y="0" width="90" height="26" rx="4" fill="#1a1a2e"/>
+    <text x="45" y="17" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#ffffff" letter-spacing="1">CERITA</text>
+
+    <!-- Title -->
+    <text x="0" y="75" font-family="Inter, sans-serif" font-size="34" font-weight="700" fill="#1a1a2e" letter-spacing="-0.5">
+      Pagi-pagi Istri Kirim Prompt.
+    </text>
+    <text x="0" y="118" font-family="Inter, sans-serif" font-size="34" font-weight="700" fill="#1a1a2e" letter-spacing="-0.5">
+      Saya Permak. Ternyata
+    </text>
+    <text x="0" y="161" font-family="Inter, sans-serif" font-size="34" font-weight="700" fill="#1a1a2e" letter-spacing="-0.5">
+      Ada yang Kurang.
+    </text>
+
+    <!-- Price highlight -->
+    <rect x="0" y="195" width="200" height="36" rx="4" fill="#1a1a2e" opacity="0.05"/>
+    <text x="100" y="218" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#1a1a2e">Rp 20.000 → Gratis</text>
+
+    <!-- Subtext -->
+    <text x="0" y="275" font-family="Inter, sans-serif" font-size="14" fill="#71717a">
+      Yang dibeli malah kalah sama yang gratisan dari suami.
+    </text>
+  </g>
+
+  <!-- Right side: Smartphone -->
+  <g transform="translate(710, 65)" filter="url(#phone-shadow)">
+    <!-- Phone body -->
+    <rect x="0" y="0" width="330" height="490" rx="28" fill="url(#phone-gradient)" stroke="#1a1a2e" stroke-width="1.5"/>
+
+    <!-- Screen -->
+    <rect x="10" y="18" width="310" height="454" rx="18" fill="#fafafa"/>
+
+    <!-- Status bar -->
+    <rect x="10" y="18" width="310" height="40" rx="18" fill="#1a1a2e"/>
+    <rect x="10" y="38" width="310" height="20" fill="#1a1a2e"/>
+    <circle cx="35" cy="38" r="12" fill="#ffffff" opacity="0.92"/>
+    <rect x="55" y="32" width="70" height="5" rx="2" fill="#ffffff" opacity="0.7"/>
+    <rect x="55" y="41" width="100" height="3" rx="1.5" fill="#ffffff" opacity="0.4"/>
+
+    <!-- Chat: Ai message -->
+    <rect x="160" y="72" width="145" height="38" rx="16" fill="#1a1a2e" opacity="0.85"/>
+    <text x="232" y="95" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#ffffff">Aa, promptnya udah dipake?</text>
+
+    <!-- Time -->
+    <text x="250" y="125" text-anchor="end" font-family="Inter, sans-serif" font-size="9" fill="#a1a1aa">08:01</text>
+
+    <!-- Chat: Aa response -->
+    <rect x="15" y="145" width="90" height="32" rx="16" fill="#e4e4e7"/>
+    <text x="60" y="165" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#1a1a2e">Belum</text>
+
+    <!-- Chat: Ai long message -->
+    <rect x="100" y="195" width="205" height="65" rx="16" fill="#1a1a2e" opacity="0.85"/>
+    <text x="202" y="215" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#ffffff" opacity="0.9">Gue nemu sisi lain dari diri gue</text>
+    <text x="202" y="230" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#ffffff" opacity="0.9">yang belum pernah gue lihat.</text>
+    <text x="202" y="245" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#ffffff" opacity="0.9">Antara takjub dan bergidik.</text>
+
+    <!-- Typing indicator -->
+    <rect x="15" y="278" width="55" height="30" rx="15" fill="#e4e4e7"/>
+    <circle cx="30" cy="293" r="3" fill="#1a1a2e" opacity="0.3"/>
+    <circle cx="42" cy="293" r="3" fill="#1a1a2e" opacity="0.5"/>
+    <circle cx="54" cy="293" r="3" fill="#1a1a2e" opacity="0.7"/>
+
+    <!-- Chat: Aa pinjem -->
+    <rect x="15" y="325" width="150" height="32" rx="16" fill="#e4e4e7"/>
+    <text x="90" y="345" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#1a1a2e">Pinjem, saya permak</text>
+
+    <!-- Code preview box -->
+    <rect x="15" y="375" width="295" height="75" rx="8" fill="#1a1a2e"/>
+    <rect x="15" y="375" width="295" height="22" rx="8" fill="#27272a"/>
+    <circle cx="30" cy="386" r="3.5" fill="#ef4444"/>
+    <circle cx="44" cy="386" r="3.5" fill="#eab308"/>
+    <circle cx="58" cy="386" r="3.5" fill="#22c55e"/>
+    <text x="30" y="420" font-family="Courier, monospace" font-size="9" fill="#71717a"># Bapikir Prompting</text>
+    <text x="30" y="436" font-family="Courier, monospace" font-size="9" fill="#a1a1aa">Audit bukti, skala keyakinan...</text>
+
+    <!-- Home indicator -->
+    <circle cx="165" cy="482" r="5" fill="#1a1a2e" opacity="0.3"/>
+  </g>
+
+  <!-- Footer -->
+  <g transform="translate(60, 585)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="11" fill="#a1a1aa">avathur.id</text>
+  </g>
+</svg>

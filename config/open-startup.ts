@@ -1,0 +1,50 @@
+export const openStartupConfig = {
+  lastUpdated: "10 Juli 2026",
+  milestones: [
+    { date: "Nov 2025", done: true, text: "Launch v0.1 — first paying customer 🎉" },
+    { date: "Des 2025", done: true, text: "Rp 1.000.000 MRR milestone" },
+    { date: "Jan 2026", done: true, text: "100 registered users" },
+    { date: "Feb 2026", done: true, text: "Launch v0.4 dengan 44 shadcn components" },
+    { date: "Mar 2026", done: true, text: "Launch v0.5 — marketing funnel pages" },
+    { date: "Apr 2026", done: false, text: "Rp 5.000.000 MRR target" },
+    { date: "Jun 2026", done: false, text: "500 registered users" },
+  ],
+  monthlyRevenue: [
+    { month: "Okt '25", mrr: 0 },
+    { month: "Nov '25", mrr: 590000 },
+    { month: "Des '25", mrr: 1200000 },
+    { month: "Jan '26", mrr: 1850000 },
+    { month: "Feb '26", mrr: 2550000 },
+    { month: "Mar '26", mrr: 3200000 },
+  ],
+  stats: [
+    {
+      change: "+12% dari bulan lalu",
+      icon: "TrendingUp" as const,
+      label: "Pendapatan Bulan Ini",
+      positive: true,
+      value: "Rp 3.200.000",
+    },
+    {
+      change: "+31 pengguna baru bulan ini",
+      icon: "Users" as const,
+      label: "Total Pengguna",
+      positive: true,
+      value: "284",
+    },
+    {
+      change: "13.4% conversion rate",
+      icon: "CreditCard" as const,
+      label: "Lisensi Terjual",
+      positive: true,
+      value: "38",
+    },
+    {
+      change: "dari 24 ulasan",
+      icon: "Star" as const,
+      label: "Rating Kepuasan",
+      positive: true,
+      value: "4.8/5",
+    },
+  ],
+};

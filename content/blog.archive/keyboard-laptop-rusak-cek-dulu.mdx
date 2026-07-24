@@ -1,0 +1,106 @@
+---
+title: "Keyboard Laptop Rusak? Jangan Langsung Ke Service — Lakukan 3 Langkah Ini Dulu"
+description: "Beberapa tombol keyboard laptop mati mendadak. Sebelum bawa ke service dan keluar uang ratusan ribu, cek dulu dengan 3 langkah ini — biar tahu pasti diagnosanya."
+date: "2026-07-14"
+slug: "keyboard-laptop-rusak-cek-dulu"
+author: "Avathur Rahman"
+tags: ["keyboard", "laptop", "diagnosa", "tips", "teknologi"]
+published: true
+image: "/images/blog/og-keyboard.svg"
+category: teknis
+access: free
+---
+
+Saya ngalamin sendiri minggu ini. Lagi asyik ngetik, tiba-tiba beberapa tombol mati. Bukan cuma satu, tapi banyak: `1 2 3 4 7 8 9 0` dan `a s d f`.
+
+Laptop belum setahun. Istri saya cuma bisa bilang: "Mungkin lagi error, istirahatin dulu."
+
+Saya restart. Shutdown. Tetep aja.
+
+Sebelum buru-buru ke service dan keluar uang, saya lakukan 3 langkah ini. Mungkin berguna buat kamu yang ngalamin hal serupa.
+
+## Langkah 1: Cek Driver, Software atau Hardware?
+
+Banyak yang panik dan langsung beli keyboard baru. Padahal belum tentu hardware-nya rusak, bisa jadi driver bermasalah.
+
+Caranya gampang.
+
+**Windows:** Klik kanan Start, **Device Manager**, cari **Keyboards**.
+
+Kalau keyboard kamu muncul tanpa tanda kuning, berarti driver normal.
+
+Untuk lebih yakin, buka **PowerShell** (administrator) dan ketik:
+
+```
+Get-WmiObject Win32_PnPEntity | Where-Object {$_.Name -like '*keyboard*'} | Select-Object Name, Status, ConfigManagerErrorCode
+```
+
+Kalau hasilnya **Status: OK** dan **Error Code: 0**, berarti driver aman. Masalahnya 99% **hardware fisik**.
+
+Dari sini saya langsung tahu: ini bukan software. Lanjut langkah 2.
+
+## Langkah 2: Tes Tombol Satu Per Satu
+
+Mata telanjang kadang bisa tipu. Ada tombol yang kelihatan normal tapi ternyata mati. Atau tombol yang kadang hidup kadang mati, tanda konektor longgar.
+
+Buka situs ini: **[KeyboardTester.com](https://www.keyboardtester.com/)**
+
+Klik **Launch the Tester**, nanti keluar keyboard virtual di layar. Tekan tombol laptop kamu satu per satu. Tombol yang berfungsi akan **berubah warna**. Yang tetap abu-abu, mati.
+
+Saya dapat hasil seperti ini:
+
+```
+Berfungsi:  5 6, = q w e r t y u i o p [ ] \ g h j k l ; ' z x c v b n m , . /
+Mati:       1 2 3 4 7 8 9 0 a s d f
+```
+
+Lihat polanya, **acak**, bukan satu baris utuh. Kalau satu baris mati (misal Q W E R T semua mati), biasanya kotoran atau tumpahan. Tapi kalau acak seperti ini, 99% **kabel ribbon putus**.
+
+## Langkah 3: Cek Part Number, Biar Gak Dibohongin Service
+
+Ini yang bikin banyak orang keluar uang lebih. Service kadang bilang "harus ganti keyboard ori" padahal bisa diperbaiki.
+
+**Cara termudah, lewat PowerShell:**
+
+```
+Get-WmiObject Win32_ComputerSystem | Select-Object Manufacturer, Model
+```
+
+Hasil saya: **Lenovo ThinkPad T470, 20JM000CUS**
+
+Dari situ saya cari part number keyboard-nya:
+- Non-backlit: `01AX446` / `SN20L72767`
+- Backlit: `01EN508`
+
+Harga di pasaran: **Rp 200-400rb** untuk original.
+
+Tapi saya tidak beli dulu. Kenapa?
+
+## Ribbon Lepas atau Keyboard Baru?
+
+Ada dua jenis keyboard laptop:
+
+1. **Ribbon terpisah**, kabel fleksibel bisa diganti sendiri. Biaya: Rp 50-100rb. Mudah.
+2. **Ribbon menyatu**, harus ganti keyboard utuh. Biaya: Rp 200-400rb. Butuh bongkar agak dalam.
+
+Laptop saya ternyata tipe kedua. Berarti harus ganti keyboard.
+
+Tapi sebelum ganti, pastikan satu hal: **apakah baterai bengkak?** Baterai bengkak sering bikin keyboard cepat rusak, menekan dari bawah.
+
+Cek battery health:
+
+```
+powercfg /batteryreport
+```
+
+Buka file HTML yang dihasilkan. Cari **DESIGN CAPACITY** vs **FULL CHARGE CAPACITY**.
+
+Kalau selisih di bawah 20%, baterai masih sehat. Saya dapat **88.9%**, aman. Berarti keyboard rusak murni karena faktor produksi.
+
+---
+
+**Pesan saya:** Jangan buru-buru beli keyboard baru. Lakukan 3 langkah ini dulu, kamu akan tahu persis masalahnya, dan gak bakal dibohongin service.
+
+Itulah yang saya praktikkan setiap hari, dan pola pikir inilah yang kami tanamkan ke setiap klien melalui **MESA**, sistem pendampingan bisnis syariah dari Bapikir.
+
+Punya masalah laptop, bisnis, atau produktivitas? **MESA** siap bantu, mulai dari diagnosa masalah sampai eksekusi solusi. Karena setiap masalah punya akar, dan setiap akar punya solusi, asalkan kita tahu cara mencarinya.

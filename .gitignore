@@ -1,0 +1,54 @@
+# dependencies
+/node_modules/
+/.pnp
+.pnp.*
+.pnp.js
+
+# testing
+/coverage/
+/test-results/
+/playwright-report/
+/blob-report/
+
+# next.js
+/.next/
+/out/
+
+# production
+/build/
+/dist/
+
+# misc
+.DS_Store
+*.pem
+Thumbs.db
+desktop.ini
+Thumbs.db:encryptable
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# e2e
+e2e/.auth/
+
+.vercel
+.env*

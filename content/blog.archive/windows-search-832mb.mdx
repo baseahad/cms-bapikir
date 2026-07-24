@@ -1,0 +1,126 @@
+---
+title: "832 MB Buat Apa? Windows Search yang Gak Pernah Dipake"
+description: "Windows Search index makan 832 MB SSD dan 200 MB RAM - tapi pemiliknya gak pernah make. Cek punya lo, mungkin juga sama."
+date: "2026-07-09"
+slug: "windows-search-832mb"
+author: "Avathur Rahman"
+tags: ["windows", "optimasi", "ssd", "tips"]
+published: true
+category: teknis
+access: free
+---
+
+# 832 MB Buat Apa? Windows Search yang Gak Pernah Dipake
+
+Waktu diagnosa laptop beberapa hari lalu, saya nemu satu hal yang bikin mikir:
+
+**Windows Search index, 832 MB.**
+
+Besar banget. Itu lebih besar dari ukuran installer browser, lebih besar dari beberapa aplikasi office. Dan setelah saya cek:
+
+- Search box di taskbar: **disembunyikan.**
+- Riwayat pencarian: **kosong.**
+- Search suggestions: **gak ada.**
+
+Pemilik laptop gak pernah make Windows Search. Tapi sistemnya setia nge-index semua file di C:, 832 MB data indeks, yang tiap hari diupdate, tiap boot di-load ke RAM (45-200 MB).
+
+---
+
+## Windows Search Index - Kapan Berguna?
+
+Jujur, Windows Search itu fitur yang **bisa sangat berguna** - kalau lo tipe orang yang:
+
+- Sering cari file pake **Win + ketik**
+- Punya ribuan dokumen, PDF, email yang perlu dicari isinya
+- Butuh hasil instan (bukan nunggu 30 detik)
+
+Indexing bikin pencarian file jadi **cepat banget** - karena sistem udah punya database isi file, bukan cari satu-satu pas lo ngetik.
+
+Tapi kalau lo:
+
+- Naruh file di folder yang lo hafal
+- Pake search jarang banget
+- Lebih sering buka file lewat shortcut atau folder langsung
+
+...maka index 832 MB itu cuma **beban mati** yang makan SSD dan RAM tanpa faedah.
+
+---
+
+## Berapa Banyak yang Bisa Dihemat?
+
+Dari kasus yang saya tangani:
+
+| Item | Sebelum | Sesudah | Hemat |
+|------|---------|---------|:-----:|
+| SSD space | 96 GB terpakai | ~95 GB (kurangi index) | ~1 GB |
+| RAM | 9.8 MB available | ~50 MB available | ~45 MB |
+| CPU | SearchIndexer 88 dtk/sesi | 0 | ~88 dtk CPU |
+
+Gak besar-besar amat sih. Tapi buat laptop dengan SSD 128 GB yang nyisa 22 GB, **setiap gigabyte berharga.**
+
+Dan lebih penting: **CPU cycles.** SearchIndexer di laptop itu udah menghabiskan 88,8 detik CPU sejak boot, padahal gak ada satu pun pencarian dilakukan.
+
+---
+
+## Opsi Bijak: Bukan Dimatiin, Tapi Dibatasi
+
+Saya gak langsung bilang "matiin aja Windows Search." Karena kalau suatu saat lo butuh cari file, tanpa index pencarian bakal lemot banget.
+
+Opsi yang lebih bijak: **batasi lokasi indexing.**
+
+**Caranya:**
+1. Buka **Control Panel** → **Indexing Options**
+2. Klik **Modify**
+3. Hapus centang folder yang gak perlu:
+   - Program Files ✅ (buang)
+   - AppData ✅ (buang)
+   - E: drive ✅ (buang, kalau isinya cuma backup)
+4. Biarkan C:\Users\...\Documents dan folder kerja lo aja
+
+Dengan cara ini, index tetap ada - tapi ukurannya lebih kecil (mungkin 100-200 MB doang), RAM yang dipake lebih dikit, dan pencarian file di folder kerja lo tetap cepet.
+
+---
+
+## Kapan Mati Total?
+
+Kalau lo beneran **gak pernah** make Windows Search (Win + ketik cuma buat buka aplikasi, bukan cari file), matiin total juga oke.
+
+**Matiin service:**
+1. Buka **services.msc**
+2. Cari **Windows Search** (atau WSearch)
+3. Klik kanan → **Properties**
+4. Startup type: **Disabled**
+5. Stop the service
+
+Hapus index:
+```
+C:\ProgramData\Microsoft\Search\Data\Applications\Windows\Windows.edb
+```
+Itu file database index-nya. Bisa dihapus aman setelah service dimatiin.
+
+**Tapi ingat:** setelah ini, pencarian file lewat Win + ketik bakal lemot (non-indexed search). File isi dokumen gak bakal ketemu, cari berdasarkan nama file aja yang jalan.
+
+---
+
+## Cek Laptop Lo Sekarang
+
+Buka Task Manager → cari proses **SearchIndexer** atau **SearchApp**. Kalau dua itu jalan dan makan resource - tanya ke diri sendiri: **"Seberapa sering gue pake Windows Search?"**
+
+Jawabannya akan menentukan: batasi indexing, atau matiin total.
+
+
+
+
+## FAQ
+
+### Kenapa Windows Search makan RAM 832MB?
+Karena indeks search yang korup atau terlalu besar. Solusi: rebuild indeks.
+
+### Apakah aman mematikan Windows Search?
+Aman. Fitur pencarian tetap bisa manual. Matikan lewat Services.
+
+
+### Apakah aman matikan Windows Search?
+Aman. Fitur pencarian tetap bisa manual. Matikan lewat Services.msc. Saya sendiri sudah matikan dan gak ada efek samping.
+
+Baca juga: [3 Taraf Berpikir](/blog/taraf-berpikir)

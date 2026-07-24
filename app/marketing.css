@@ -1,0 +1,1875 @@
+body[data-marketing-design],
+.marketing-shell[data-design] {
+    --background: 210 40% 99%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 214 32% 93%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 214 32% 96%;
+    --muted-foreground: 215 16% 39%;
+    --accent: 214 95% 93%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 26% 86%;
+    --input: 214 26% 88%;
+    --ring: 221 83% 53%;
+    --chart-1: 221 83% 53%;
+    --chart-2: 188 95% 42%;
+    --chart-3: 262 83% 58%;
+    --chart-4: 32 95% 56%;
+    --chart-5: 342 83% 60%;
+    --radius: 1.25rem;
+    --marketing-font-display: var(--font-geist-sans);
+    --marketing-font-body: var(--font-geist-sans);
+    --marketing-font-mono: var(--font-jetbrains-mono);
+    --marketing-shell-background:
+      radial-gradient(circle at top left, hsl(213 100% 96%), transparent 34%),
+      radial-gradient(circle at top right, hsl(189 100% 96%), transparent 28%),
+      linear-gradient(180deg, hsl(210 40% 99%), hsl(214 50% 97%) 40%, hsl(0 0% 100%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(214 50% 97% / 0.72), hsl(210 40% 99% / 0.92));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(0 0% 100%), hsl(210 40% 99%));
+    --marketing-overlay:
+      radial-gradient(circle at 15% 10%, hsl(221 100% 58% / 0.09), transparent 18%),
+      radial-gradient(circle at 85% 20%, hsl(188 100% 45% / 0.08), transparent 16%);
+    --marketing-card-shadow: 0 30px 80px -48px hsl(221 39% 11% / 0.28);
+    --marketing-button-shadow: 0 18px 40px -24px hsl(221 83% 53% / 0.45);
+    --marketing-section-rule: hsl(214 26% 86% / 0.75);
+    --marketing-heading-tracking: -0.045em;
+    --marketing-display-weight: 720;
+    --marketing-pill-radius: 999px;
+    --marketing-button-transform: none;
+    --marketing-button-tracking: 0;
+    --marketing-label-tracking: 0.16em;
+    --marketing-icon-surface: hsl(221 83% 53% / 0.12);
+    --marketing-icon-foreground: hsl(221 83% 44%);
+    --marketing-hero-accent: hsl(221 83% 53%);
+    --marketing-surface-highlight:
+      linear-gradient(180deg, hsl(0 0% 100% / 0.4), transparent 42%);
+    --marketing-card-hover-shadow: 0 34px 96px -56px hsl(221 39% 11% / 0.34);
+    --marketing-card-hover-transform: translateY(-4px);
+    --marketing-button-outline-background: hsl(var(--background) / 0.52);
+    --marketing-hero-badge-bg: hsl(var(--card) / 0.74);
+    --marketing-hero-badge-border: hsl(var(--border) / 0.66);
+    --marketing-interactive-duration: 220ms;
+}
+
+body[data-marketing-design="default"],
+.marketing-shell[data-design="default"] {
+    --marketing-font-display: var(--font-geist-sans);
+    --marketing-font-body: var(--font-geist-sans);
+    --marketing-shell-background:
+      radial-gradient(circle at top left, hsl(213 100% 96%), transparent 34%),
+      radial-gradient(circle at top right, hsl(189 100% 96%), transparent 28%),
+      linear-gradient(180deg, hsl(210 40% 99%), hsl(214 50% 97%) 40%, hsl(0 0% 100%));
+}
+
+body[data-marketing-design="monochrome"],
+.marketing-shell[data-design="monochrome"] {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 35%;
+    --accent: 0 0% 0%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 80% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 0%;
+    --input: 0 0% 0%;
+    --ring: 0 0% 0%;
+    --radius: 0rem;
+    --marketing-font-display: var(--font-playfair-display);
+    --marketing-font-body: var(--font-source-serif);
+    --marketing-font-mono: var(--font-jetbrains-mono);
+    --marketing-shell-background:
+      linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 100%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(0 0% 99%), hsl(0 0% 100%));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 100%));
+    --marketing-overlay:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 1px,
+        hsl(0 0% 0% / 0.045) 1px,
+        hsl(0 0% 0% / 0.045) 2px
+      );
+    --marketing-card-shadow: none;
+    --marketing-button-shadow: none;
+    --marketing-section-rule: hsl(0 0% 0% / 0.92);
+    --marketing-heading-tracking: -0.055em;
+    --marketing-display-weight: 700;
+    --marketing-pill-radius: 0rem;
+    --marketing-button-transform: uppercase;
+    --marketing-button-tracking: 0.12em;
+    --marketing-icon-surface: hsl(0 0% 0% / 0.06);
+    --marketing-icon-foreground: hsl(0 0% 0%);
+    --marketing-hero-accent: hsl(0 0% 0%);
+}
+
+body[data-marketing-design="newsprint"],
+.marketing-shell[data-design="newsprint"] {
+    --background: 42 44% 95%;
+    --foreground: 20 10% 12%;
+    --card: 42 38% 96%;
+    --card-foreground: 20 10% 12%;
+    --popover: 42 38% 96%;
+    --popover-foreground: 20 10% 12%;
+    --primary: 8 68% 38%;
+    --primary-foreground: 40 50% 97%;
+    --secondary: 40 22% 89%;
+    --secondary-foreground: 20 10% 12%;
+    --muted: 40 20% 92%;
+    --muted-foreground: 24 8% 33%;
+    --accent: 44 70% 87%;
+    --accent-foreground: 8 60% 28%;
+    --destructive: 0 80% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 28 18% 24%;
+    --input: 28 18% 32%;
+    --ring: 8 68% 38%;
+    --radius: 0rem;
+    --marketing-font-display: var(--font-source-serif);
+    --marketing-font-body: var(--font-source-serif);
+    --marketing-font-mono: var(--font-jetbrains-mono);
+    --marketing-shell-background:
+      linear-gradient(180deg, hsl(42 44% 95%), hsl(38 28% 92%) 38%, hsl(42 40% 96%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(40 24% 92% / 0.9), hsl(42 38% 96% / 0.94));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(42 38% 96%), hsl(40 26% 93%));
+    --marketing-overlay:
+      linear-gradient(hsl(28 18% 12% / 0.035) 1px, transparent 1px),
+      linear-gradient(
+        90deg,
+        transparent 0,
+        transparent calc(33.33% - 1px),
+        hsl(28 18% 12% / 0.04) calc(33.33% - 1px),
+        hsl(28 18% 12% / 0.04) 33.33%,
+        transparent 33.33%,
+        transparent calc(66.66% - 1px),
+        hsl(28 18% 12% / 0.04) calc(66.66% - 1px),
+        hsl(28 18% 12% / 0.04) 66.66%,
+        transparent 66.66%
+      );
+    --marketing-card-shadow: none;
+    --marketing-button-shadow: none;
+    --marketing-section-rule: hsl(28 18% 24% / 0.92);
+    --marketing-heading-tracking: -0.04em;
+    --marketing-display-weight: 700;
+    --marketing-pill-radius: 0rem;
+    --marketing-button-transform: uppercase;
+    --marketing-button-tracking: 0.12em;
+    --marketing-label-tracking: 0.24em;
+    --marketing-icon-surface: hsl(8 68% 38% / 0.08);
+    --marketing-icon-foreground: hsl(8 68% 34%);
+    --marketing-hero-accent: hsl(8 68% 38%);
+}
+
+body[data-marketing-design="luxury"],
+.marketing-shell[data-design="luxury"] {
+    --background: 34 46% 98%;
+    --foreground: 22 24% 16%;
+    --card: 36 44% 99%;
+    --card-foreground: 22 24% 16%;
+    --popover: 36 44% 99%;
+    --popover-foreground: 22 24% 16%;
+    --primary: 28 34% 24%;
+    --primary-foreground: 36 44% 98%;
+    --secondary: 37 24% 92%;
+    --secondary-foreground: 22 24% 16%;
+    --muted: 36 26% 95%;
+    --muted-foreground: 28 12% 37%;
+    --accent: 39 56% 68%;
+    --accent-foreground: 26 30% 18%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 36 22% 82%;
+    --input: 36 22% 82%;
+    --ring: 39 56% 58%;
+    --radius: 1.75rem;
+    --marketing-font-display: var(--font-playfair-display);
+    --marketing-font-body: var(--font-geist-sans);
+    --marketing-font-mono: var(--font-ibm-plex-sans);
+    --marketing-shell-background:
+      radial-gradient(circle at 18% 10%, hsl(39 56% 76% / 0.18), transparent 24%),
+      radial-gradient(circle at 82% 8%, hsl(28 34% 24% / 0.08), transparent 18%),
+      linear-gradient(180deg, hsl(34 46% 98%), hsl(34 34% 96%) 44%, hsl(32 32% 94%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(36 28% 96% / 0.92), hsl(34 24% 93% / 0.86));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(36 44% 99% / 0.96), hsl(34 28% 95% / 0.9));
+    --marketing-overlay:
+      radial-gradient(circle at 50% 0%, hsl(39 56% 68% / 0.09), transparent 24%),
+      linear-gradient(180deg, transparent, hsl(28 34% 24% / 0.04));
+    --marketing-card-shadow: 0 28px 80px -52px hsl(24 28% 16% / 0.24);
+    --marketing-button-shadow: 0 18px 42px -24px hsl(39 56% 46% / 0.32);
+    --marketing-section-rule: hsl(36 22% 82% / 0.9);
+    --marketing-heading-tracking: -0.055em;
+    --marketing-display-weight: 700;
+    --marketing-pill-radius: 999px;
+    --marketing-button-tracking: 0.08em;
+    --marketing-label-tracking: 0.24em;
+    --marketing-icon-surface: hsl(39 56% 68% / 0.14);
+    --marketing-icon-foreground: hsl(32 34% 28%);
+    --marketing-hero-accent: hsl(39 56% 52%);
+}
+
+body[data-marketing-design="academia"],
+.marketing-shell[data-design="academia"] {
+    --background: 38 36% 96%;
+    --foreground: 226 22% 18%;
+    --card: 40 36% 97%;
+    --card-foreground: 226 22% 18%;
+    --popover: 40 36% 97%;
+    --popover-foreground: 226 22% 18%;
+    --primary: 346 44% 31%;
+    --primary-foreground: 40 36% 96%;
+    --secondary: 38 22% 90%;
+    --secondary-foreground: 226 22% 18%;
+    --muted: 40 24% 93%;
+    --muted-foreground: 226 10% 34%;
+    --accent: 45 52% 84%;
+    --accent-foreground: 346 44% 24%;
+    --destructive: 0 70% 44%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 34 18% 70%;
+    --input: 34 18% 70%;
+    --ring: 346 44% 31%;
+    --radius: 0.6rem;
+    --marketing-font-display: var(--font-playfair-display);
+    --marketing-font-body: var(--font-source-serif);
+    --marketing-font-mono: var(--font-ibm-plex-sans);
+    --marketing-shell-background:
+      radial-gradient(circle at 20% 6%, hsl(45 52% 84% / 0.16), transparent 24%),
+      linear-gradient(180deg, hsl(38 36% 96%), hsl(40 28% 92%) 48%, hsl(36 24% 94%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(40 28% 92% / 0.82), hsl(38 30% 95% / 0.92));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(40 36% 97%), hsl(38 28% 94%));
+    --marketing-overlay:
+      linear-gradient(hsl(226 22% 18% / 0.028) 1px, transparent 1px),
+      radial-gradient(circle at 50% 0%, hsl(346 44% 31% / 0.08), transparent 18%);
+    --marketing-card-shadow: 0 24px 60px -52px hsl(226 22% 10% / 0.22);
+    --marketing-button-shadow: 0 18px 40px -30px hsl(346 44% 20% / 0.3);
+    --marketing-section-rule: hsl(34 18% 70% / 0.92);
+    --marketing-heading-tracking: -0.045em;
+    --marketing-display-weight: 700;
+    --marketing-pill-radius: 0.35rem;
+    --marketing-button-transform: uppercase;
+    --marketing-button-tracking: 0.1em;
+    --marketing-label-tracking: 0.24em;
+    --marketing-icon-surface: hsl(346 44% 31% / 0.1);
+    --marketing-icon-foreground: hsl(346 44% 29%);
+    --marketing-hero-accent: hsl(346 44% 31%);
+}
+
+body[data-marketing-design="saas"],
+.marketing-shell[data-design="saas"] {
+    --background: 213 100% 99%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 226 100% 61%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 194 90% 94%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 44% 97%;
+    --muted-foreground: 219 18% 42%;
+    --accent: 190 100% 94%;
+    --accent-foreground: 225 60% 18%;
+    --border: 220 46% 88%;
+    --input: 220 46% 88%;
+    --ring: 226 100% 61%;
+    --radius: 1.5rem;
+    --marketing-font-display: var(--font-manrope);
+    --marketing-font-body: var(--font-manrope);
+    --marketing-shell-background:
+      radial-gradient(circle at top left, hsl(225 100% 92%), transparent 30%),
+      radial-gradient(circle at 80% 10%, hsl(188 100% 88%), transparent 24%),
+      linear-gradient(180deg, hsl(213 100% 99%), hsl(210 100% 98%) 45%, hsl(0 0% 100%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(214 100% 97% / 0.9), hsl(197 100% 96% / 0.66));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(0 0% 100%), hsl(212 100% 99%));
+    --marketing-overlay:
+      radial-gradient(circle at 20% 0%, hsl(225 100% 61% / 0.12), transparent 18%),
+      radial-gradient(circle at 100% 15%, hsl(186 100% 45% / 0.1), transparent 18%);
+    --marketing-card-shadow: 0 34px 90px -48px hsl(228 100% 50% / 0.34);
+    --marketing-button-shadow: 0 22px 48px -26px hsl(226 100% 61% / 0.48);
+    --marketing-section-rule: hsl(220 46% 88% / 0.82);
+    --marketing-heading-tracking: -0.055em;
+    --marketing-display-weight: 800;
+    --marketing-icon-surface: hsl(226 100% 61% / 0.12);
+    --marketing-icon-foreground: hsl(226 100% 54%);
+    --marketing-hero-accent: hsl(226 100% 61%);
+}
+
+body[data-marketing-design="professional"],
+.marketing-shell[data-design="professional"] {
+    --background: 210 25% 99%;
+    --foreground: 218 32% 16%;
+    --card: 0 0% 100%;
+    --card-foreground: 218 32% 16%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 218 32% 16%;
+    --primary: 214 52% 34%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 212 28% 93%;
+    --secondary-foreground: 218 32% 16%;
+    --muted: 210 22% 96%;
+    --muted-foreground: 215 13% 41%;
+    --accent: 214 52% 93%;
+    --accent-foreground: 214 52% 22%;
+    --border: 214 18% 85%;
+    --input: 214 18% 85%;
+    --ring: 214 52% 34%;
+    --radius: 1rem;
+    --marketing-font-display: var(--font-geist-sans);
+    --marketing-font-body: var(--font-geist-sans);
+    --marketing-shell-background:
+      linear-gradient(180deg, hsl(210 25% 99%), hsl(214 27% 97%) 42%, hsl(0 0% 100%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(210 25% 98%), hsl(214 27% 96%));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(0 0% 100%), hsl(210 25% 99%));
+    --marketing-overlay:
+      radial-gradient(circle at 50% 0%, hsl(214 52% 34% / 0.07), transparent 22%);
+    --marketing-card-shadow: 0 24px 64px -42px hsl(214 52% 18% / 0.2);
+    --marketing-button-shadow: 0 18px 42px -24px hsl(214 52% 34% / 0.35);
+    --marketing-section-rule: hsl(214 18% 85% / 0.88);
+    --marketing-heading-tracking: -0.04em;
+    --marketing-display-weight: 700;
+    --marketing-icon-surface: hsl(214 52% 34% / 0.08);
+    --marketing-icon-foreground: hsl(214 52% 30%);
+    --marketing-hero-accent: hsl(214 52% 34%);
+}
+
+body[data-marketing-design="enterprise"],
+.marketing-shell[data-design="enterprise"] {
+    --background: 210 20% 99%;
+    --foreground: 221 39% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 221 39% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 221 39% 14%;
+    --primary: 221 71% 31%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 216 22% 92%;
+    --secondary-foreground: 221 39% 14%;
+    --muted: 214 18% 95%;
+    --muted-foreground: 217 12% 39%;
+    --accent: 221 71% 92%;
+    --accent-foreground: 221 71% 22%;
+    --border: 217 18% 79%;
+    --input: 217 18% 79%;
+    --ring: 221 71% 31%;
+    --radius: 0.75rem;
+    --marketing-font-display: var(--font-ibm-plex-sans);
+    --marketing-font-body: var(--font-ibm-plex-sans);
+    --marketing-font-mono: var(--font-jetbrains-mono);
+    --marketing-shell-background:
+      linear-gradient(180deg, hsl(210 20% 99%), hsl(214 25% 97%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(214 23% 97%), hsl(214 18% 95%));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(0 0% 100%), hsl(214 23% 98%));
+    --marketing-overlay:
+      linear-gradient(hsl(221 39% 14% / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(221 39% 14% / 0.03) 1px, transparent 1px);
+    --marketing-card-shadow: 0 20px 50px -40px hsl(221 71% 14% / 0.16);
+    --marketing-button-shadow: 0 16px 32px -20px hsl(221 71% 31% / 0.32);
+    --marketing-section-rule: hsl(217 18% 79% / 0.92);
+    --marketing-heading-tracking: -0.035em;
+    --marketing-display-weight: 700;
+    --marketing-pill-radius: 0.6rem;
+    --marketing-button-transform: uppercase;
+    --marketing-button-tracking: 0.08em;
+    --marketing-label-tracking: 0.2em;
+    --marketing-icon-surface: hsl(221 71% 31% / 0.08);
+    --marketing-icon-foreground: hsl(221 71% 31%);
+    --marketing-hero-accent: hsl(221 71% 31%);
+}
+
+body[data-marketing-design="neo-brutalism"],
+.marketing-shell[data-design="neo-brutalism"] {
+    --background: 43 100% 94%;
+    --foreground: 0 0% 0%;
+    --card: 48 100% 97%;
+    --card-foreground: 0 0% 0%;
+    --popover: 48 100% 97%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 344 100% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 190 100% 65%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 48 100% 90%;
+    --muted-foreground: 0 0% 22%;
+    --accent: 52 100% 64%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 8 100% 54%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 0%;
+    --input: 0 0% 0%;
+    --ring: 0 0% 0%;
+    --radius: 1rem;
+    --marketing-font-display: var(--font-space-grotesk);
+    --marketing-font-body: var(--font-space-grotesk);
+    --marketing-shell-background:
+      linear-gradient(180deg, hsl(43 100% 94%), hsl(31 100% 92%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(52 100% 84% / 0.86), hsl(31 100% 92% / 0.72));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(48 100% 97%), hsl(52 100% 92%));
+    --marketing-overlay:
+      radial-gradient(circle at 15% 12%, hsl(344 100% 58% / 0.14), transparent 14%),
+      radial-gradient(circle at 86% 10%, hsl(190 100% 45% / 0.16), transparent 12%);
+    --marketing-card-shadow: 10px 10px 0 hsl(0 0% 0%);
+    --marketing-button-shadow: 8px 8px 0 hsl(0 0% 0%);
+    --marketing-section-rule: hsl(0 0% 0%);
+    --marketing-heading-tracking: -0.06em;
+    --marketing-display-weight: 700;
+    --marketing-pill-radius: 1rem;
+    --marketing-button-transform: uppercase;
+    --marketing-button-tracking: 0.06em;
+    --marketing-icon-surface: hsl(190 100% 65%);
+    --marketing-icon-foreground: hsl(0 0% 0%);
+    --marketing-hero-accent: hsl(344 100% 58%);
+}
+
+body[data-marketing-design="bauhaus"],
+.marketing-shell[data-design="bauhaus"] {
+    --background: 44 100% 97%;
+    --foreground: 0 0% 6%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 6%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 6%;
+    --primary: 358 84% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 51 100% 60%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 44 44% 92%;
+    --muted-foreground: 0 0% 20%;
+    --accent: 212 100% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 12 100% 54%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 0%;
+    --input: 0 0% 0%;
+    --ring: 358 84% 52%;
+    --radius: 1.25rem;
+    --marketing-font-display: var(--font-space-grotesk);
+    --marketing-font-body: var(--font-space-grotesk);
+    --marketing-font-mono: var(--font-ibm-plex-sans);
+    --marketing-shell-background:
+      radial-gradient(circle at 10% 16%, hsl(358 84% 52% / 0.16), transparent 14%),
+      radial-gradient(circle at 88% 12%, hsl(212 100% 55% / 0.16), transparent 14%),
+      radial-gradient(circle at 82% 78%, hsl(51 100% 60% / 0.22), transparent 18%),
+      linear-gradient(180deg, hsl(44 100% 97%), hsl(42 80% 94%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(51 100% 88% / 0.8), hsl(44 92% 94% / 0.88));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(0 0% 100%), hsl(44 90% 95%));
+    --marketing-overlay:
+      linear-gradient(135deg, hsl(0 0% 0% / 0.03), transparent 20%, hsl(0 0% 0% / 0.03) 20.6%, transparent 21.4%);
+    --marketing-card-shadow: 0 22px 44px -34px hsl(0 0% 0% / 0.24);
+    --marketing-button-shadow: 4px 4px 0 hsl(0 0% 0%);
+    --marketing-section-rule: hsl(0 0% 0%);
+    --marketing-heading-tracking: -0.06em;
+    --marketing-display-weight: 700;
+    --marketing-pill-radius: 999px;
+    --marketing-button-transform: uppercase;
+    --marketing-button-tracking: 0.12em;
+    --marketing-label-tracking: 0.26em;
+    --marketing-icon-surface: hsl(51 100% 60%);
+    --marketing-icon-foreground: hsl(0 0% 0%);
+    --marketing-hero-accent: hsl(212 100% 55%);
+}
+
+body[data-marketing-design="web3"],
+.marketing-shell[data-design="web3"] {
+    --background: 240 28% 8%;
+    --foreground: 210 40% 98%;
+    --card: 240 23% 14%;
+    --card-foreground: 210 40% 98%;
+    --popover: 240 23% 14%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 186 100% 50%;
+    --primary-foreground: 240 28% 8%;
+    --secondary: 258 72% 60%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 240 18% 16%;
+    --muted-foreground: 220 20% 74%;
+    --accent: 281 95% 68%;
+    --accent-foreground: 240 28% 8%;
+    --destructive: 350 100% 66%;
+    --destructive-foreground: 240 28% 8%;
+    --border: 240 18% 25%;
+    --input: 240 18% 25%;
+    --ring: 186 100% 50%;
+    --radius: 1.5rem;
+    --marketing-font-display: var(--font-space-grotesk);
+    --marketing-font-body: var(--font-space-grotesk);
+    --marketing-font-mono: var(--font-jetbrains-mono);
+    --marketing-shell-background:
+      radial-gradient(circle at top left, hsl(186 100% 50% / 0.16), transparent 24%),
+      radial-gradient(circle at 80% 0%, hsl(281 95% 68% / 0.18), transparent 22%),
+      linear-gradient(180deg, hsl(240 28% 8%), hsl(242 24% 10%), hsl(240 28% 8%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(240 20% 12% / 0.94), hsl(240 18% 15% / 0.84));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(240 22% 14% / 0.78), hsl(242 20% 11% / 0.66));
+    --marketing-overlay:
+      linear-gradient(hsl(210 40% 98% / 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(210 40% 98% / 0.035) 1px, transparent 1px);
+    --marketing-card-shadow: 0 28px 90px -40px hsl(186 100% 50% / 0.24);
+    --marketing-button-shadow: 0 18px 48px -20px hsl(186 100% 50% / 0.34);
+    --marketing-section-rule: hsl(240 18% 25% / 0.92);
+    --marketing-heading-tracking: -0.055em;
+    --marketing-display-weight: 700;
+    --marketing-pill-radius: 999px;
+    --marketing-icon-surface: hsl(186 100% 50% / 0.15);
+    --marketing-icon-foreground: hsl(186 100% 60%);
+    --marketing-hero-accent: hsl(281 95% 68%);
+}
+
+body[data-marketing-design="terminal"],
+.marketing-shell[data-design="terminal"] {
+    --background: 145 30% 7%;
+    --foreground: 126 82% 82%;
+    --card: 145 24% 10%;
+    --card-foreground: 126 82% 82%;
+    --popover: 145 24% 10%;
+    --popover-foreground: 126 82% 82%;
+    --primary: 141 100% 67%;
+    --primary-foreground: 145 30% 7%;
+    --secondary: 176 84% 62%;
+    --secondary-foreground: 145 30% 7%;
+    --muted: 145 18% 14%;
+    --muted-foreground: 126 28% 66%;
+    --accent: 50 100% 62%;
+    --accent-foreground: 145 30% 7%;
+    --destructive: 0 92% 70%;
+    --destructive-foreground: 145 30% 7%;
+    --border: 141 24% 28%;
+    --input: 141 24% 28%;
+    --ring: 141 100% 67%;
+    --radius: 0rem;
+    --marketing-font-display: var(--font-jetbrains-mono);
+    --marketing-font-body: var(--font-jetbrains-mono);
+    --marketing-font-mono: var(--font-jetbrains-mono);
+    --marketing-shell-background:
+      radial-gradient(circle at 16% 8%, hsl(141 100% 67% / 0.14), transparent 18%),
+      radial-gradient(circle at 88% 10%, hsl(176 84% 62% / 0.12), transparent 18%),
+      linear-gradient(180deg, hsl(145 30% 7%), hsl(145 24% 9%), hsl(145 30% 7%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(145 20% 10% / 0.94), hsl(145 18% 12% / 0.88));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(145 24% 10% / 0.96), hsl(145 20% 8% / 0.92));
+    --marketing-overlay:
+      repeating-linear-gradient(
+        180deg,
+        transparent,
+        transparent 0.4rem,
+        hsl(141 100% 67% / 0.03) 0.4rem,
+        hsl(141 100% 67% / 0.03) 0.42rem
+      ),
+      linear-gradient(hsl(141 30% 40% / 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(141 30% 40% / 0.045) 1px, transparent 1px);
+    --marketing-card-shadow:
+      0 0 0 1px hsl(141 24% 28% / 0.7),
+      0 28px 80px -48px hsl(141 100% 24% / 0.44);
+    --marketing-button-shadow:
+      0 0 0 1px hsl(141 100% 67% / 0.22),
+      0 16px 36px -18px hsl(141 100% 28% / 0.5);
+    --marketing-section-rule: hsl(141 24% 28% / 0.92);
+    --marketing-heading-tracking: -0.03em;
+    --marketing-display-weight: 700;
+    --marketing-pill-radius: 0rem;
+    --marketing-button-transform: uppercase;
+    --marketing-button-tracking: 0.1em;
+    --marketing-label-tracking: 0.18em;
+    --marketing-icon-surface: hsl(141 100% 67% / 0.12);
+    --marketing-icon-foreground: hsl(141 100% 72%);
+    --marketing-hero-accent: hsl(50 100% 62%);
+}
+
+:root:not(.dark) body[data-marketing-design="web3"],
+:root:not(.dark) .marketing-shell[data-design="web3"] {
+    --background: 246 100% 99%;
+    --foreground: 242 28% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 242 28% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 242 28% 12%;
+    --primary: 258 86% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 188 100% 94%;
+    --secondary-foreground: 242 28% 12%;
+    --muted: 240 100% 97%;
+    --muted-foreground: 233 16% 42%;
+    --accent: 186 100% 45%;
+    --accent-foreground: 242 28% 12%;
+    --destructive: 350 90% 56%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 246 36% 86%;
+    --input: 246 36% 86%;
+    --ring: 258 86% 60%;
+    --marketing-shell-background:
+      radial-gradient(circle at top left, hsl(186 100% 90% / 0.72), transparent 24%),
+      radial-gradient(circle at 82% 0%, hsl(281 95% 88% / 0.68), transparent 22%),
+      linear-gradient(180deg, hsl(246 100% 99%), hsl(238 100% 98%), hsl(0 0% 100%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(240 100% 97% / 0.96), hsl(246 80% 96% / 0.88));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(0 0% 100% / 0.92), hsl(246 100% 98% / 0.84));
+    --marketing-overlay:
+      linear-gradient(hsl(258 86% 60% / 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(186 100% 45% / 0.04) 1px, transparent 1px);
+    --marketing-card-shadow: 0 30px 90px -50px hsl(258 86% 42% / 0.2);
+    --marketing-button-shadow: 0 18px 48px -22px hsl(258 86% 52% / 0.34);
+    --marketing-section-rule: hsl(246 36% 86% / 0.92);
+    --marketing-icon-surface: hsl(258 86% 60% / 0.12);
+    --marketing-icon-foreground: hsl(258 86% 52%);
+    --marketing-hero-accent: hsl(258 86% 60%);
+    --marketing-surface-highlight:
+      linear-gradient(180deg, hsl(0 0% 100% / 0.54), transparent 42%);
+}
+
+:root:not(.dark) body[data-marketing-design="terminal"],
+:root:not(.dark) .marketing-shell[data-design="terminal"] {
+    --background: 120 38% 97%;
+    --foreground: 152 48% 10%;
+    --card: 120 33% 99%;
+    --card-foreground: 152 48% 10%;
+    --popover: 120 33% 99%;
+    --popover-foreground: 152 48% 10%;
+    --primary: 148 76% 26%;
+    --primary-foreground: 120 38% 97%;
+    --secondary: 173 42% 85%;
+    --secondary-foreground: 152 48% 10%;
+    --muted: 120 22% 93%;
+    --muted-foreground: 152 18% 34%;
+    --accent: 44 96% 52%;
+    --accent-foreground: 152 48% 10%;
+    --destructive: 0 72% 46%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 151 24% 28%;
+    --input: 151 24% 36%;
+    --ring: 148 76% 26%;
+    --marketing-shell-background:
+      radial-gradient(circle at 16% 8%, hsl(148 76% 26% / 0.12), transparent 18%),
+      radial-gradient(circle at 88% 10%, hsl(173 46% 46% / 0.1), transparent 18%),
+      linear-gradient(180deg, hsl(120 38% 97%), hsl(120 30% 95%), hsl(120 38% 97%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(120 26% 94% / 0.94), hsl(120 22% 92% / 0.88));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(120 33% 99% / 0.98), hsl(120 24% 95% / 0.92));
+    --marketing-overlay:
+      repeating-linear-gradient(
+        180deg,
+        transparent,
+        transparent 0.38rem,
+        hsl(148 76% 26% / 0.028) 0.38rem,
+        hsl(148 76% 26% / 0.028) 0.4rem
+      ),
+      linear-gradient(hsl(151 24% 28% / 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(151 24% 28% / 0.045) 1px, transparent 1px);
+    --marketing-card-shadow: 0 24px 70px -52px hsl(148 76% 18% / 0.18);
+    --marketing-button-shadow: 0 14px 34px -18px hsl(148 76% 24% / 0.24);
+    --marketing-section-rule: hsl(151 24% 28% / 0.82);
+    --marketing-icon-surface: hsl(148 76% 26% / 0.1);
+    --marketing-icon-foreground: hsl(148 76% 24%);
+    --marketing-hero-accent: hsl(148 76% 26%);
+    --marketing-surface-highlight:
+      linear-gradient(180deg, hsl(120 33% 100% / 0.48), transparent 44%);
+}
+
+:root.dark body[data-marketing-design="default"],
+:root.dark .marketing-shell[data-design="default"] {
+    --background: 223 34% 10%;
+    --foreground: 210 40% 97%;
+    --card: 224 30% 14%;
+    --card-foreground: 210 40% 97%;
+    --popover: 224 30% 14%;
+    --popover-foreground: 210 40% 97%;
+    --primary: 217 100% 70%;
+    --primary-foreground: 224 34% 10%;
+    --secondary: 220 22% 18%;
+    --secondary-foreground: 210 40% 97%;
+    --muted: 220 20% 16%;
+    --muted-foreground: 220 18% 72%;
+    --accent: 189 95% 58%;
+    --accent-foreground: 224 34% 10%;
+    --border: 220 18% 24%;
+    --input: 220 18% 24%;
+    --ring: 217 100% 70%;
+    --marketing-shell-background:
+      radial-gradient(circle at top left, hsl(217 100% 70% / 0.16), transparent 24%),
+      radial-gradient(circle at top right, hsl(189 95% 58% / 0.14), transparent 22%),
+      linear-gradient(180deg, hsl(223 34% 10%), hsl(224 30% 12%), hsl(223 34% 9%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(221 26% 12% / 0.94), hsl(223 20% 15% / 0.88));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(224 30% 14% / 0.96), hsl(223 24% 12% / 0.9));
+    --marketing-overlay:
+      radial-gradient(circle at 15% 10%, hsl(217 100% 70% / 0.09), transparent 18%),
+      radial-gradient(circle at 85% 20%, hsl(189 95% 58% / 0.08), transparent 16%);
+    --marketing-card-shadow: 0 30px 80px -48px hsl(0 0% 0% / 0.55);
+    --marketing-button-shadow: 0 18px 40px -24px hsl(217 100% 56% / 0.42);
+    --marketing-section-rule: hsl(220 18% 24% / 0.88);
+    --marketing-icon-surface: hsl(217 100% 70% / 0.12);
+    --marketing-icon-foreground: hsl(217 100% 74%);
+    --marketing-hero-accent: hsl(217 100% 70%);
+    --marketing-surface-highlight:
+      linear-gradient(180deg, hsl(0 0% 100% / 0.08), transparent 44%);
+    --marketing-card-hover-shadow: 0 42px 110px -60px hsl(0 0% 0% / 0.64);
+    --marketing-button-outline-background: hsl(var(--background) / 0.78);
+    --marketing-hero-badge-bg: hsl(var(--card) / 0.66);
+    --marketing-hero-badge-border: hsl(var(--border) / 0.92);
+}
+
+:root.dark body[data-marketing-design-family="editorial"],
+:root.dark .marketing-shell[data-family="editorial"] {
+    --background: 22 16% 10%;
+    --foreground: 36 24% 92%;
+    --card: 22 14% 13%;
+    --card-foreground: 36 24% 92%;
+    --popover: 22 14% 13%;
+    --popover-foreground: 36 24% 92%;
+    --primary: 38 68% 72%;
+    --primary-foreground: 22 16% 10%;
+    --secondary: 22 12% 18%;
+    --secondary-foreground: 36 24% 92%;
+    --muted: 22 10% 16%;
+    --muted-foreground: 34 14% 68%;
+    --accent: 8 60% 62%;
+    --accent-foreground: 22 16% 10%;
+    --border: 28 14% 28%;
+    --input: 28 14% 28%;
+    --ring: 38 68% 72%;
+    --marketing-shell-background:
+      radial-gradient(circle at 18% 8%, hsl(38 68% 72% / 0.1), transparent 18%),
+      linear-gradient(180deg, hsl(22 16% 10%), hsl(24 14% 12%), hsl(20 18% 9%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(22 12% 12% / 0.92), hsl(20 10% 15% / 0.86));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(22 14% 13% / 0.96), hsl(22 12% 11% / 0.9));
+    --marketing-overlay:
+      linear-gradient(hsl(36 24% 92% / 0.022) 1px, transparent 1px),
+      radial-gradient(circle at 50% 0%, hsl(8 60% 62% / 0.08), transparent 18%);
+    --marketing-card-shadow: 0 28px 72px -52px hsl(0 0% 0% / 0.6);
+    --marketing-button-shadow: 0 16px 36px -24px hsl(38 68% 32% / 0.28);
+    --marketing-section-rule: hsl(28 14% 28% / 0.92);
+    --marketing-icon-surface: hsl(38 68% 72% / 0.12);
+    --marketing-icon-foreground: hsl(38 68% 78%);
+    --marketing-hero-accent: hsl(38 68% 72%);
+    --marketing-surface-highlight:
+      linear-gradient(180deg, hsl(0 0% 100% / 0.06), transparent 48%);
+    --marketing-card-hover-shadow: 0 34px 88px -56px hsl(0 0% 0% / 0.66);
+    --marketing-button-outline-background: hsl(var(--background) / 0.84);
+    --marketing-hero-badge-bg: hsl(var(--card) / 0.74);
+    --marketing-hero-badge-border: hsl(var(--border) / 0.96);
+}
+
+:root.dark body[data-marketing-design="monochrome"],
+:root.dark .marketing-shell[data-design="monochrome"] {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 0 0% 11%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 5%;
+    --border: 0 0% 100%;
+    --input: 0 0% 100%;
+    --ring: 0 0% 100%;
+    --marketing-shell-background:
+      linear-gradient(180deg, hsl(0 0% 5%), hsl(0 0% 7%), hsl(0 0% 4%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(0 0% 7% / 0.94), hsl(0 0% 5% / 0.88));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 6%));
+    --marketing-overlay:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 1px,
+        hsl(0 0% 100% / 0.04) 1px,
+        hsl(0 0% 100% / 0.04) 2px
+      );
+    --marketing-card-shadow: none;
+    --marketing-button-shadow: none;
+    --marketing-section-rule: hsl(0 0% 100% / 0.92);
+    --marketing-icon-surface: hsl(0 0% 100% / 0.08);
+    --marketing-icon-foreground: hsl(0 0% 100%);
+    --marketing-hero-accent: hsl(0 0% 100%);
+}
+
+:root.dark body[data-marketing-design="newsprint"],
+:root.dark .marketing-shell[data-design="newsprint"] {
+    --primary: 8 82% 66%;
+    --accent: 40 76% 68%;
+    --marketing-hero-accent: hsl(8 82% 66%);
+    --marketing-icon-surface: hsl(8 82% 66% / 0.12);
+    --marketing-icon-foreground: hsl(8 82% 72%);
+}
+
+:root.dark body[data-marketing-design="luxury"],
+:root.dark .marketing-shell[data-design="luxury"] {
+    --primary: 39 68% 72%;
+    --accent: 32 36% 62%;
+    --marketing-shell-background:
+      radial-gradient(circle at 18% 8%, hsl(39 68% 72% / 0.12), transparent 18%),
+      radial-gradient(circle at 82% 8%, hsl(32 36% 62% / 0.08), transparent 18%),
+      linear-gradient(180deg, hsl(24 18% 9%), hsl(24 16% 11%), hsl(22 18% 8%));
+    --marketing-icon-surface: hsl(39 68% 72% / 0.12);
+    --marketing-icon-foreground: hsl(39 68% 78%);
+    --marketing-hero-accent: hsl(39 68% 72%);
+}
+
+:root.dark body[data-marketing-design="academia"],
+:root.dark .marketing-shell[data-design="academia"] {
+    --primary: 346 62% 68%;
+    --accent: 45 52% 76%;
+    --marketing-icon-surface: hsl(346 62% 68% / 0.12);
+    --marketing-icon-foreground: hsl(346 62% 74%);
+    --marketing-hero-accent: hsl(346 62% 68%);
+}
+
+:root.dark body[data-marketing-design-family="product"],
+:root.dark .marketing-shell[data-family="product"] {
+    --background: 222 30% 10%;
+    --foreground: 210 40% 97%;
+    --card: 223 26% 13%;
+    --card-foreground: 210 40% 97%;
+    --popover: 223 26% 13%;
+    --popover-foreground: 210 40% 97%;
+    --secondary: 221 20% 18%;
+    --secondary-foreground: 210 40% 97%;
+    --muted: 221 18% 16%;
+    --muted-foreground: 218 18% 72%;
+    --border: 220 18% 24%;
+    --input: 220 18% 24%;
+    --marketing-shell-background:
+      radial-gradient(circle at 18% 8%, hsl(226 100% 70% / 0.16), transparent 22%),
+      radial-gradient(circle at 86% 10%, hsl(186 100% 62% / 0.12), transparent 18%),
+      linear-gradient(180deg, hsl(222 30% 10%), hsl(223 26% 12%), hsl(222 30% 9%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(222 22% 12% / 0.94), hsl(222 18% 15% / 0.88));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(223 26% 13% / 0.96), hsl(222 20% 11% / 0.9));
+    --marketing-overlay:
+      radial-gradient(circle at 20% 0%, hsl(226 100% 70% / 0.1), transparent 18%),
+      radial-gradient(circle at 100% 15%, hsl(186 100% 62% / 0.08), transparent 18%);
+    --marketing-card-shadow: 0 28px 84px -48px hsl(0 0% 0% / 0.58);
+    --marketing-button-shadow: 0 18px 42px -24px hsl(226 100% 54% / 0.36);
+    --marketing-section-rule: hsl(220 18% 24% / 0.9);
+    --marketing-surface-highlight:
+      linear-gradient(180deg, hsl(0 0% 100% / 0.08), transparent 46%);
+    --marketing-card-hover-shadow: 0 38px 104px -58px hsl(0 0% 0% / 0.64);
+    --marketing-button-outline-background: hsl(var(--background) / 0.76);
+    --marketing-hero-badge-bg: hsl(var(--card) / 0.7);
+    --marketing-hero-badge-border: hsl(var(--border) / 0.94);
+}
+
+:root.dark body[data-marketing-design="saas"],
+:root.dark .marketing-shell[data-design="saas"] {
+    --primary: 226 100% 72%;
+    --primary-foreground: 222 30% 10%;
+    --accent: 186 100% 62%;
+    --accent-foreground: 222 30% 10%;
+    --ring: 226 100% 72%;
+    --marketing-icon-surface: hsl(226 100% 72% / 0.12);
+    --marketing-icon-foreground: hsl(226 100% 76%);
+    --marketing-hero-accent: hsl(226 100% 72%);
+}
+
+:root.dark body[data-marketing-design="professional"],
+:root.dark .marketing-shell[data-design="professional"] {
+    --primary: 214 58% 72%;
+    --primary-foreground: 222 30% 10%;
+    --accent: 198 48% 72%;
+    --accent-foreground: 222 30% 10%;
+    --ring: 214 58% 72%;
+    --marketing-shell-background:
+      radial-gradient(circle at 50% 0%, hsl(214 58% 72% / 0.12), transparent 20%),
+      linear-gradient(180deg, hsl(222 24% 10%), hsl(222 22% 12%), hsl(222 24% 9%));
+    --marketing-icon-surface: hsl(214 58% 72% / 0.1);
+    --marketing-icon-foreground: hsl(214 58% 76%);
+    --marketing-hero-accent: hsl(214 58% 72%);
+}
+
+:root.dark body[data-marketing-design="enterprise"],
+:root.dark .marketing-shell[data-design="enterprise"] {
+    --background: 220 28% 9%;
+    --foreground: 210 40% 97%;
+    --card: 221 24% 12%;
+    --card-foreground: 210 40% 97%;
+    --popover: 221 24% 12%;
+    --popover-foreground: 210 40% 97%;
+    --primary: 214 88% 72%;
+    --primary-foreground: 220 28% 9%;
+    --secondary: 221 18% 17%;
+    --secondary-foreground: 210 40% 97%;
+    --muted: 221 16% 15%;
+    --muted-foreground: 218 18% 72%;
+    --accent: 188 72% 60%;
+    --accent-foreground: 220 28% 9%;
+    --border: 218 18% 24%;
+    --input: 218 18% 24%;
+    --ring: 214 88% 72%;
+    --marketing-shell-background:
+      linear-gradient(180deg, hsl(220 28% 9%), hsl(220 24% 11%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(220 20% 12% / 0.94), hsl(220 18% 14% / 0.88));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(221 24% 12% / 0.96), hsl(220 20% 10% / 0.9));
+    --marketing-overlay:
+      linear-gradient(hsl(210 40% 98% / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(210 40% 98% / 0.03) 1px, transparent 1px);
+    --marketing-card-shadow: 0 24px 64px -48px hsl(0 0% 0% / 0.58);
+    --marketing-button-shadow: 0 18px 36px -22px hsl(214 88% 52% / 0.34);
+    --marketing-section-rule: hsl(218 18% 24% / 0.92);
+    --marketing-icon-surface: hsl(214 88% 72% / 0.12);
+    --marketing-icon-foreground: hsl(214 88% 76%);
+    --marketing-hero-accent: hsl(214 88% 72%);
+    --marketing-surface-highlight:
+      linear-gradient(180deg, hsl(0 0% 100% / 0.06), transparent 48%);
+}
+
+:root.dark body[data-marketing-design-family="expressive"],
+:root.dark .marketing-shell[data-family="expressive"] {
+    --background: 18 18% 10%;
+    --foreground: 48 100% 96%;
+    --card: 20 16% 13%;
+    --card-foreground: 48 100% 96%;
+    --popover: 20 16% 13%;
+    --popover-foreground: 48 100% 96%;
+    --secondary: 24 16% 18%;
+    --secondary-foreground: 48 100% 96%;
+    --muted: 24 14% 16%;
+    --muted-foreground: 34 18% 70%;
+    --border: 0 0% 0%;
+    --input: 0 0% 0%;
+    --marketing-shell-background:
+      radial-gradient(circle at 14% 12%, hsl(344 100% 58% / 0.18), transparent 14%),
+      radial-gradient(circle at 86% 10%, hsl(212 100% 55% / 0.16), transparent 14%),
+      linear-gradient(180deg, hsl(18 18% 10%), hsl(20 18% 12%), hsl(16 18% 9%));
+    --marketing-section-muted-bg:
+      linear-gradient(180deg, hsl(24 16% 14% / 0.92), hsl(18 16% 12% / 0.86));
+    --marketing-card-bg:
+      linear-gradient(180deg, hsl(20 16% 13%), hsl(22 14% 11%));
+    --marketing-card-shadow: 8px 8px 0 hsl(0 0% 0%);
+    --marketing-section-rule: hsl(0 0% 0%);
+    --marketing-surface-highlight:
+      linear-gradient(180deg, hsl(0 0% 100% / 0.05), transparent 42%);
+    --marketing-card-hover-shadow: 12px 12px 0 hsl(0 0% 0%);
+    --marketing-button-outline-background: hsl(var(--background) / 0.86);
+    --marketing-hero-badge-bg: hsl(var(--card) / 0.82);
+    --marketing-hero-badge-border: hsl(var(--border) / 1);
+}
+
+:root.dark body[data-marketing-design="neo-brutalism"],
+:root.dark .marketing-shell[data-design="neo-brutalism"] {
+    --primary: 344 100% 64%;
+    --primary-foreground: 18 18% 10%;
+    --accent: 52 100% 66%;
+    --accent-foreground: 18 18% 10%;
+    --ring: 344 100% 64%;
+    --marketing-icon-surface: hsl(190 100% 65%);
+    --marketing-icon-foreground: hsl(0 0% 0%);
+    --marketing-hero-accent: hsl(344 100% 64%);
+}
+
+:root.dark body[data-marketing-design="bauhaus"],
+:root.dark .marketing-shell[data-design="bauhaus"] {
+    --primary: 358 92% 62%;
+    --primary-foreground: 18 18% 10%;
+    --secondary: 51 100% 64%;
+    --secondary-foreground: 18 18% 10%;
+    --accent: 212 100% 62%;
+    --accent-foreground: 18 18% 10%;
+    --ring: 358 92% 62%;
+    --marketing-icon-surface: hsl(51 100% 64%);
+    --marketing-icon-foreground: hsl(0 0% 0%);
+    --marketing-hero-accent: hsl(212 100% 62%);
+}
+
+.marketing-shell[data-design] {
+    position: relative;
+    overflow: clip;
+    background: var(--marketing-shell-background);
+    color: hsl(var(--foreground));
+    font-family: var(--marketing-font-body), var(--font-geist-sans), sans-serif;
+    isolation: isolate;
+}
+
+.marketing-shell[data-design]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--marketing-overlay);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.marketing-shell[data-design] .marketing-header,
+.marketing-shell[data-design] .marketing-footer {
+    border-color: hsl(var(--border) / 0.72);
+    background: hsl(var(--background) / 0.78);
+    backdrop-filter: blur(16px);
+    box-shadow: inset 0 -1px 0 hsl(var(--border) / 0.28);
+}
+
+.marketing-shell[data-design] .marketing-brand {
+    font-family: var(--marketing-font-display), var(--font-geist-sans), sans-serif;
+    letter-spacing: calc(var(--marketing-heading-tracking) * 0.55);
+}
+
+.marketing-shell[data-design] :is(
+    [data-slot="button"],
+    [data-slot="card"],
+    .marketing-table-shell,
+    .marketing-stack-card,
+    .marketing-ai-note,
+    .marketing-timeline,
+    .marketing-pricing-toggle,
+    .marketing-ai-tool,
+    [data-slot="accordion-item"],
+    [data-slot="carousel-previous"],
+    [data-slot="carousel-next"]
+) {
+    transition:
+      transform var(--marketing-interactive-duration) ease,
+      box-shadow var(--marketing-interactive-duration) ease,
+      background-color var(--marketing-interactive-duration) ease,
+      border-color var(--marketing-interactive-duration) ease,
+      color var(--marketing-interactive-duration) ease,
+      opacity var(--marketing-interactive-duration) ease;
+}
+
+.marketing-shell[data-design] .marketing-section {
+    position: relative;
+    padding-block: clamp(4.5rem, 7vw, 7rem);
+}
+
+.marketing-shell[data-design] .marketing-section--muted {
+    background: var(--marketing-section-muted-bg);
+}
+
+.marketing-shell[data-design] .marketing-section--muted::before {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 1px;
+    background: var(--marketing-section-rule);
+}
+
+.marketing-shell[data-design] .marketing-section__inner {
+    width: min(100%, 72rem);
+    margin-inline: auto;
+}
+
+.marketing-shell[data-design] .marketing-section__header {
+    max-width: 44rem;
+    margin: 0 auto 3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.marketing-shell[data-design] .marketing-eyebrow {
+    font-family: var(--marketing-font-mono), monospace;
+    font-size: 0.76rem;
+    letter-spacing: var(--marketing-label-tracking);
+    text-transform: uppercase;
+}
+
+.marketing-shell[data-design] .marketing-heading {
+    font-family: var(--marketing-font-display), var(--font-geist-sans), sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.75rem);
+    font-weight: var(--marketing-display-weight);
+    letter-spacing: var(--marketing-heading-tracking);
+    line-height: 0.94;
+    text-wrap: balance;
+}
+
+.marketing-shell[data-design] .marketing-copy {
+    color: hsl(var(--muted-foreground));
+    font-family: var(--marketing-font-body), var(--font-geist-sans), sans-serif;
+    text-wrap: pretty;
+}
+
+.marketing-shell[data-design] .marketing-note {
+    color: hsl(var(--muted-foreground));
+    font-size: 0.95rem;
+}
+
+.marketing-shell[data-design] .marketing-card-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.marketing-shell[data-design] .marketing-hero {
+    position: relative;
+    width: min(100%, 72rem);
+    margin-inline: auto;
+    padding: clamp(4.75rem, 8vw, 7rem) 1rem clamp(4rem, 7vw, 6rem);
+}
+
+.marketing-shell[data-design] .marketing-hero::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 1.5rem;
+    width: clamp(7rem, 10vw, 10rem);
+    height: 1px;
+    background: var(--marketing-section-rule);
+    opacity: 0.9;
+    transform: translateX(-50%);
+}
+
+.marketing-shell[data-design] .marketing-hero__content {
+    max-width: 52rem;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.marketing-shell[data-design] .marketing-hero__title {
+    font-family: var(--marketing-font-display), var(--font-geist-sans), sans-serif;
+    font-size: clamp(3.4rem, 7vw, 6.25rem);
+    font-weight: var(--marketing-display-weight);
+    letter-spacing: var(--marketing-heading-tracking);
+    line-height: 0.9;
+    text-wrap: balance;
+    text-wrap: pretty;
+}
+
+.marketing-shell[data-design] .marketing-hero__accent {
+    color: var(--marketing-hero-accent);
+}
+
+.marketing-shell[data-design] .marketing-hero__badge {
+    border: 1px solid var(--marketing-hero-badge-border);
+    background: var(--marketing-hero-badge-bg);
+    box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.18);
+    padding-inline: 0.9rem;
+    padding-block: 0.45rem;
+}
+
+.marketing-shell[data-design] .marketing-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.marketing-shell[data-design] .marketing-hero__meta {
+    color: hsl(var(--muted-foreground));
+    font-family: var(--marketing-font-mono), monospace;
+    font-size: 0.84rem;
+    letter-spacing: 0.08em;
+}
+
+.marketing-shell[data-design] .marketing-feature-icon {
+    display: flex;
+    height: 2.75rem;
+    width: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: calc(var(--radius) - 0.35rem);
+    background: var(--marketing-icon-surface);
+    color: var(--marketing-icon-foreground);
+    box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.18);
+}
+
+.marketing-shell[data-design] .marketing-table-shell,
+.marketing-shell[data-design] .marketing-ai-note,
+.marketing-shell[data-design] .marketing-stack-card,
+.marketing-shell[data-design] .marketing-timeline,
+.marketing-shell[data-design] .marketing-pricing-toggle {
+    border: 1px solid hsl(var(--border) / 0.78);
+    border-radius: calc(var(--radius) + 0.25rem);
+    background: var(--marketing-card-bg);
+    box-shadow: var(--marketing-card-shadow);
+}
+
+.marketing-shell[data-design] :is(
+    [data-slot="card"],
+    .marketing-table-shell,
+    .marketing-stack-card,
+    .marketing-ai-note,
+    .marketing-timeline,
+    .marketing-pricing-toggle,
+    [data-slot="accordion-item"]
+) {
+    position: relative;
+    overflow: hidden;
+}
+
+.marketing-shell[data-design] :is(
+    [data-slot="card"],
+    .marketing-table-shell,
+    .marketing-stack-card,
+    .marketing-ai-note,
+    .marketing-timeline,
+    .marketing-pricing-toggle,
+    [data-slot="accordion-item"]
+)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--marketing-surface-highlight);
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.marketing-shell[data-design] .marketing-stack-grid,
+.marketing-shell[data-design] .marketing-pricing-grid {
+    display: grid;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.marketing-shell[data-design] .marketing-stack-card {
+    padding: 1rem;
+}
+
+.marketing-shell[data-design] .marketing-ai-grid {
+    display: grid;
+    gap: 3rem;
+}
+
+.marketing-shell[data-design] .marketing-ai-tools {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.marketing-shell[data-design] .marketing-ai-tool {
+    border: 1px solid hsl(var(--border) / 0.78);
+    border-radius: calc(var(--radius) - 0.2rem);
+    background: hsl(var(--muted) / 0.7);
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.12);
+}
+
+.marketing-shell[data-design] .marketing-ai-note {
+    padding: 1rem;
+}
+
+.marketing-shell[data-design] .marketing-testimonial-quote {
+    font-size: 1.04rem;
+    line-height: 1.75;
+}
+
+.marketing-shell[data-design] .marketing-timeline__dot {
+    border-color: hsl(var(--border));
+    background: hsl(var(--background));
+}
+
+.marketing-shell[data-design] .marketing-timeline__dot--active {
+    border-color: hsl(var(--primary));
+    background: hsl(var(--primary));
+}
+
+.marketing-shell[data-design] .marketing-design-trigger {
+    min-width: 2.5rem;
+}
+
+.marketing-shell[data-design] [data-slot="button"] {
+    border-radius: calc(var(--radius) - 0.25rem);
+    font-family: var(--marketing-font-body), var(--font-geist-sans), sans-serif;
+    font-weight: 600;
+    letter-spacing: var(--marketing-button-tracking);
+    text-transform: var(--marketing-button-transform);
+}
+
+.marketing-shell[data-design] [data-slot="button"][data-variant="default"] {
+    box-shadow: var(--marketing-button-shadow);
+}
+
+.marketing-shell[data-design] [data-slot="button"][data-variant="outline"] {
+    border-color: hsl(var(--border) / 0.9);
+    background: var(--marketing-button-outline-background);
+}
+
+.marketing-shell[data-design] [data-slot="card"] {
+    border-color: hsl(var(--border) / 0.82);
+    border-width: 1px;
+    border-radius: calc(var(--radius) + 0.1rem);
+    background: var(--marketing-card-bg);
+    box-shadow: var(--marketing-card-shadow);
+}
+
+.marketing-shell[data-design] [data-slot="card-title"] {
+    font-family: var(--marketing-font-display), var(--font-geist-sans), sans-serif;
+    letter-spacing: calc(var(--marketing-heading-tracking) * 0.35);
+}
+
+.marketing-shell[data-design] [data-slot="badge"] {
+    border-radius: var(--marketing-pill-radius);
+    font-family: var(--marketing-font-mono), monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.marketing-shell[data-design] [data-slot="separator"] {
+    background: var(--marketing-section-rule);
+}
+
+.marketing-shell[data-design] [data-slot="accordion-item"] {
+    border-color: hsl(var(--border) / 0.82);
+    border-radius: calc(var(--radius) + 0.05rem);
+    background: var(--marketing-card-bg);
+    box-shadow: var(--marketing-card-shadow);
+    margin-bottom: 0.85rem;
+    padding-inline: 1rem;
+}
+
+.marketing-shell[data-design] [data-slot="accordion-trigger"] {
+    border-radius: calc(var(--radius) - 0.25rem);
+    text-decoration: none;
+}
+
+.marketing-shell[data-design] [data-slot="table-row"]:hover {
+    background: hsl(var(--muted) / 0.72);
+}
+
+.marketing-shell[data-design] [data-slot="navigation-menu-trigger"],
+.marketing-shell[data-design] [data-slot="navigation-menu-link"],
+.marketing-shell[data-design] [data-slot="navigation-menu-viewport"] {
+    border-radius: calc(var(--radius) - 0.25rem);
+}
+
+body[data-marketing-design] [data-slot="dropdown-menu-content"] {
+    border-color: hsl(var(--border) / 0.82);
+    border-radius: calc(var(--radius) - 0.2rem);
+    background: hsl(var(--popover));
+    color: hsl(var(--popover-foreground));
+    box-shadow: var(--marketing-card-shadow);
+}
+
+body[data-marketing-design] [data-slot="dropdown-menu-radio-item"] {
+    border-radius: calc(var(--radius) - 0.35rem);
+}
+
+.marketing-shell[data-design] :is(
+    .marketing-feature-card,
+    .marketing-testimonial-card,
+    .marketing-pricing-card,
+    .marketing-stack-card,
+    .marketing-ai-note,
+    .marketing-ai-tool
+):hover {
+    transform: var(--marketing-card-hover-transform);
+    box-shadow: var(--marketing-card-hover-shadow);
+}
+
+.marketing-shell[data-design] .marketing-feature-card [data-slot="card-header"] {
+    gap: 0.85rem;
+}
+
+.marketing-shell[data-design] .marketing-feature-card [data-slot="card-content"] {
+    padding-top: 0;
+}
+
+.marketing-shell[data-design] .marketing-pricing-card {
+    height: 100%;
+    gap: 0;
+}
+
+.marketing-shell[data-design] .marketing-pricing-card [data-slot="card-content"] {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.marketing-shell[data-design] .marketing-pricing-card [data-slot="card-content"] > ul {
+    flex: 1;
+}
+
+.marketing-shell[data-design] .marketing-pricing-card--featured {
+    border-color: hsl(var(--primary) / 0.5);
+    transform: translateY(-0.65rem);
+}
+
+.marketing-shell[data-design] .marketing-pricing-card--featured:hover {
+    transform: translateY(-0.85rem);
+}
+
+.marketing-shell[data-design] .marketing-pricing-card--featured::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px hsl(var(--primary) / 0.22);
+    pointer-events: none;
+}
+
+.marketing-shell[data-design] .marketing-faq [data-slot="accordion-item"]:last-child {
+    margin-bottom: 0;
+}
+
+.marketing-shell[data-design] .marketing-faq [data-slot="accordion-trigger"] {
+    padding-block: 1.05rem;
+}
+
+.marketing-shell[data-design] .marketing-faq [data-slot="accordion-trigger"]:hover {
+    color: hsl(var(--foreground));
+    text-decoration: none;
+}
+
+.marketing-shell[data-design] .marketing-faq [data-slot="accordion-content"] > div {
+    color: hsl(var(--muted-foreground));
+}
+
+.marketing-shell[data-design] .marketing-testimonials [data-slot="carousel-content"] {
+    padding-block: 0.35rem;
+}
+
+.marketing-shell[data-design] .marketing-testimonials__control {
+    border-color: hsl(var(--border) / 0.88);
+    background: hsl(var(--background) / 0.88);
+    box-shadow: var(--marketing-card-shadow);
+}
+
+.marketing-shell[data-design] .marketing-testimonials__control:hover:not(:disabled) {
+    transform: translateY(-50%) scale(1.04);
+    box-shadow: var(--marketing-card-hover-shadow);
+}
+
+.marketing-shell[data-design] .marketing-timeline__line {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--primary) / 0.45),
+      hsl(var(--border) / 0.58)
+    );
+}
+
+.marketing-shell[data-design] [data-slot="navigation-menu-trigger"],
+.marketing-shell[data-design] [data-slot="navigation-menu-link"] {
+    transition:
+      background-color var(--marketing-interactive-duration) ease,
+      color var(--marketing-interactive-duration) ease,
+      border-color var(--marketing-interactive-duration) ease,
+      transform var(--marketing-interactive-duration) ease;
+}
+
+.marketing-shell[data-design] [data-slot="navigation-menu-trigger"]:hover,
+.marketing-shell[data-design] [data-slot="navigation-menu-link"]:hover {
+    transform: translateY(-1px);
+}
+
+.marketing-shell[data-design][data-family="editorial"] .marketing-section__header::after {
+    content: "";
+    width: 5rem;
+    height: 1px;
+    background: var(--marketing-section-rule);
+    opacity: 0.9;
+}
+
+.marketing-shell[data-design][data-family="editorial"] .marketing-hero__badge {
+    letter-spacing: 0.2em;
+}
+
+.marketing-shell[data-design][data-family="editorial"] [data-slot="badge"] {
+    padding-inline: 0.8rem;
+    padding-block: 0.45rem;
+}
+
+.marketing-shell[data-design][data-family="product"] .marketing-hero__badge {
+    box-shadow:
+      0 18px 40px -28px hsl(var(--primary) / 0.28),
+      inset 0 1px 0 hsl(0 0% 100% / 0.18);
+}
+
+.marketing-shell[data-design][data-family="product"] .marketing-pricing-card--featured {
+    box-shadow: 0 34px 96px -50px hsl(var(--primary) / 0.26);
+}
+
+.marketing-shell[data-design][data-family="expressive"] .marketing-hero__badge {
+    transform: rotate(-2deg);
+    box-shadow: 4px 4px 0 hsl(0 0% 0%);
+}
+
+.marketing-shell[data-design][data-family="expressive"] .marketing-pricing-card--featured [data-slot="badge"] {
+    transform: rotate(-4deg);
+}
+
+.marketing-shell[data-design="monochrome"] [data-slot="button"],
+.marketing-shell[data-design="monochrome"] [data-slot="card"],
+.marketing-shell[data-design="monochrome"] [data-slot="badge"],
+.marketing-shell[data-design="monochrome"] [data-slot="avatar"],
+.marketing-shell[data-design="monochrome"] [data-slot="avatar-fallback"],
+.marketing-shell[data-design="monochrome"] [data-slot="avatar-badge"],
+.marketing-shell[data-design="monochrome"] [data-slot="avatar-group-count"],
+.marketing-shell[data-design="monochrome"] .marketing-table-shell,
+.marketing-shell[data-design="monochrome"] .marketing-stack-card,
+.marketing-shell[data-design="monochrome"] .marketing-ai-note,
+.marketing-shell[data-design="monochrome"] .marketing-timeline,
+body[data-marketing-design="monochrome"] [data-slot="dropdown-menu-content"] {
+    border-width: 1.5px;
+}
+
+.marketing-shell[data-design="monochrome"] [data-slot="button"][data-variant="default"] {
+    box-shadow: none;
+}
+
+.marketing-shell[data-design="monochrome"] [data-slot="button"][data-variant="outline"] {
+    border-width: 2px;
+}
+
+.marketing-shell[data-design="monochrome"] img,
+.marketing-shell[data-design="monochrome"] [data-slot="avatar"],
+.marketing-shell[data-design="monochrome"] [data-slot="avatar-fallback"],
+.marketing-shell[data-design="monochrome"] [data-slot="avatar-badge"],
+.marketing-shell[data-design="monochrome"] [data-slot="avatar-group-count"] {
+    border-radius: 0 !important;
+}
+
+.marketing-shell[data-design="monochrome"] [data-slot="card"]:hover,
+.marketing-shell[data-design="monochrome"] [data-slot="button"][data-variant="outline"]:hover {
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
+}
+
+.marketing-shell[data-design="newsprint"] .marketing-header,
+.marketing-shell[data-design="newsprint"] .marketing-footer,
+.marketing-shell[data-design="academia"] .marketing-header,
+.marketing-shell[data-design="academia"] .marketing-footer,
+.marketing-shell[data-design="terminal"] .marketing-header,
+.marketing-shell[data-design="terminal"] .marketing-footer {
+    backdrop-filter: none;
+}
+
+.marketing-shell[data-design="newsprint"] [data-slot="button"],
+.marketing-shell[data-design="newsprint"] [data-slot="card"],
+.marketing-shell[data-design="newsprint"] [data-slot="badge"],
+.marketing-shell[data-design="newsprint"] .marketing-table-shell,
+.marketing-shell[data-design="newsprint"] .marketing-stack-card,
+.marketing-shell[data-design="newsprint"] .marketing-ai-note,
+.marketing-shell[data-design="newsprint"] .marketing-timeline,
+body[data-marketing-design="newsprint"] [data-slot="dropdown-menu-content"] {
+    border-width: 1.5px;
+}
+
+.marketing-shell[data-design="newsprint"] [data-slot="button"][data-variant="default"] {
+    box-shadow: none;
+}
+
+.marketing-shell[data-design="newsprint"] [data-slot="button"][data-variant="outline"] {
+    border-width: 1.5px;
+}
+
+.marketing-shell[data-design="newsprint"] .marketing-brand,
+.marketing-shell[data-design="newsprint"] .marketing-heading,
+.marketing-shell[data-design="newsprint"] .marketing-hero__title {
+    text-transform: uppercase;
+}
+
+.marketing-shell[data-design="newsprint"] .marketing-brand {
+    letter-spacing: 0.12em;
+}
+
+.marketing-shell[data-design="newsprint"] .marketing-table-shell,
+.marketing-shell[data-design="newsprint"] .marketing-faq [data-slot="accordion-item"] {
+    background:
+      linear-gradient(180deg, hsl(42 38% 96%), hsl(40 26% 93%)),
+      repeating-linear-gradient(
+        180deg,
+        transparent,
+        transparent 1px,
+        hsl(28 18% 12% / 0.03) 1px,
+        hsl(28 18% 12% / 0.03) 2px
+      );
+}
+
+.marketing-shell[data-design="luxury"] .marketing-header,
+.marketing-shell[data-design="luxury"] .marketing-footer {
+    background: hsl(var(--background) / 0.86);
+}
+
+.marketing-shell[data-design="luxury"] [data-slot="button"][data-variant="default"] {
+    background-image: linear-gradient(135deg, hsl(28 34% 24%), hsl(39 56% 58%));
+    color: hsl(36 44% 98%);
+}
+
+.marketing-shell[data-design="luxury"] [data-slot="button"][data-variant="outline"] {
+    background: hsl(var(--background) / 0.6);
+}
+
+.marketing-shell[data-design="luxury"] [data-slot="card"],
+.marketing-shell[data-design="luxury"] .marketing-table-shell,
+.marketing-shell[data-design="luxury"] .marketing-stack-card,
+.marketing-shell[data-design="luxury"] .marketing-ai-note,
+.marketing-shell[data-design="luxury"] .marketing-timeline {
+    backdrop-filter: blur(16px);
+}
+
+.marketing-shell[data-design="luxury"] .marketing-heading,
+.marketing-shell[data-design="luxury"] .marketing-hero__title {
+    line-height: 0.88;
+}
+
+.marketing-shell[data-design="luxury"] .marketing-hero__badge,
+.marketing-shell[data-design="luxury"] [data-slot="badge"] {
+    border-color: hsl(39 56% 58% / 0.4);
+}
+
+.marketing-shell[data-design="academia"] .marketing-section__header {
+    max-width: 46rem;
+}
+
+.marketing-shell[data-design="academia"] [data-slot="button"],
+.marketing-shell[data-design="academia"] [data-slot="card"],
+.marketing-shell[data-design="academia"] [data-slot="badge"],
+.marketing-shell[data-design="academia"] .marketing-table-shell,
+.marketing-shell[data-design="academia"] .marketing-stack-card,
+.marketing-shell[data-design="academia"] .marketing-ai-note,
+.marketing-shell[data-design="academia"] .marketing-timeline,
+body[data-marketing-design="academia"] [data-slot="dropdown-menu-content"] {
+    border-width: 1.25px;
+}
+
+.marketing-shell[data-design="academia"] .marketing-brand,
+.marketing-shell[data-design="academia"] .marketing-heading,
+.marketing-shell[data-design="academia"] .marketing-hero__title {
+    font-variant: small-caps;
+}
+
+.marketing-shell[data-design="academia"] .marketing-faq [data-slot="accordion-item"],
+.marketing-shell[data-design="academia"] .marketing-table-shell,
+.marketing-shell[data-design="academia"] .marketing-timeline {
+    border-style: double;
+    border-width: 3px;
+}
+
+.marketing-shell[data-design="enterprise"] .marketing-section__header,
+.marketing-shell[data-design="professional"] .marketing-section__header {
+    max-width: 48rem;
+}
+
+.marketing-shell[data-design="enterprise"] [data-slot="button"],
+.marketing-shell[data-design="enterprise"] .marketing-eyebrow {
+    font-family: var(--marketing-font-mono), monospace;
+}
+
+.marketing-shell[data-design="neo-brutalism"] [data-slot="button"],
+.marketing-shell[data-design="neo-brutalism"] [data-slot="card"],
+.marketing-shell[data-design="neo-brutalism"] .marketing-table-shell,
+.marketing-shell[data-design="neo-brutalism"] .marketing-stack-card,
+.marketing-shell[data-design="neo-brutalism"] .marketing-ai-note,
+.marketing-shell[data-design="neo-brutalism"] .marketing-timeline,
+body[data-marketing-design="neo-brutalism"] [data-slot="dropdown-menu-content"] {
+    border: 3px solid hsl(var(--border));
+}
+
+.marketing-shell[data-design="neo-brutalism"] [data-slot="button"][data-variant="default"] {
+    border: 3px solid hsl(var(--border));
+}
+
+.marketing-shell[data-design="neo-brutalism"] [data-slot="button"][data-variant="outline"] {
+    border: 3px solid hsl(var(--border));
+    box-shadow: 8px 8px 0 hsl(0 0% 0%);
+}
+
+.marketing-shell[data-design="neo-brutalism"] [data-slot="card"]:nth-child(3n + 2) {
+    background: linear-gradient(180deg, hsl(190 100% 90%), hsl(48 100% 95%));
+}
+
+.marketing-shell[data-design="neo-brutalism"] .marketing-pricing-card--featured {
+    transform: translateY(-0.5rem) rotate(-1deg);
+}
+
+.marketing-shell[data-design="neo-brutalism"] .marketing-pricing-card--featured:hover {
+    transform: translateY(-0.7rem) rotate(-1deg);
+}
+
+:root.dark .marketing-shell[data-design="neo-brutalism"] [data-slot="card"]:nth-child(3n + 2) {
+    background: linear-gradient(180deg, hsl(190 72% 22%), hsl(48 100% 24%));
+}
+
+.marketing-shell[data-design="bauhaus"] [data-slot="button"],
+.marketing-shell[data-design="bauhaus"] [data-slot="card"],
+.marketing-shell[data-design="bauhaus"] .marketing-table-shell,
+.marketing-shell[data-design="bauhaus"] .marketing-stack-card,
+.marketing-shell[data-design="bauhaus"] .marketing-ai-note,
+.marketing-shell[data-design="bauhaus"] .marketing-timeline,
+body[data-marketing-design="bauhaus"] [data-slot="dropdown-menu-content"] {
+    border: 2px solid hsl(var(--border));
+}
+
+.marketing-shell[data-design="bauhaus"] .marketing-hero::after {
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(
+      90deg,
+      hsl(var(--primary)) 0 33.33%,
+      hsl(var(--secondary)) 33.33% 66.66%,
+      hsl(var(--accent)) 66.66% 100%
+    );
+}
+
+.marketing-shell[data-design="bauhaus"] [data-slot="button"][data-variant="outline"] {
+    box-shadow: 4px 4px 0 hsl(0 0% 0%);
+}
+
+.marketing-shell[data-design="bauhaus"] [data-slot="card"]:nth-child(3n + 1) {
+    background: linear-gradient(180deg, hsl(0 0% 100%), hsl(51 100% 92%));
+}
+
+.marketing-shell[data-design="bauhaus"] [data-slot="card"]:nth-child(3n + 2) {
+    background: linear-gradient(180deg, hsl(0 0% 100%), hsl(212 100% 94%));
+}
+
+.marketing-shell[data-design="bauhaus"] [data-slot="card"]:nth-child(3n) {
+    background: linear-gradient(180deg, hsl(0 0% 100%), hsl(358 84% 94%));
+}
+
+.marketing-shell[data-design="bauhaus"] .marketing-hero__badge {
+    transform: rotate(-1.5deg);
+}
+
+:root.dark .marketing-shell[data-design="bauhaus"] [data-slot="card"]:nth-child(3n + 1) {
+    background: linear-gradient(180deg, hsl(20 16% 13%), hsl(51 100% 24%));
+}
+
+:root.dark .marketing-shell[data-design="bauhaus"] [data-slot="card"]:nth-child(3n + 2) {
+    background: linear-gradient(180deg, hsl(20 16% 13%), hsl(212 100% 22%));
+}
+
+:root.dark .marketing-shell[data-design="bauhaus"] [data-slot="card"]:nth-child(3n) {
+    background: linear-gradient(180deg, hsl(20 16% 13%), hsl(358 92% 24%));
+}
+
+.marketing-shell[data-design="web3"] {
+    color: hsl(var(--foreground));
+}
+
+.marketing-shell[data-design="web3"] .marketing-header,
+.marketing-shell[data-design="web3"] .marketing-footer {
+    background: hsl(var(--background) / 0.72);
+}
+
+.marketing-shell[data-design="web3"] [data-slot="card"],
+.marketing-shell[data-design="web3"] .marketing-table-shell,
+.marketing-shell[data-design="web3"] .marketing-stack-card,
+.marketing-shell[data-design="web3"] .marketing-ai-note,
+.marketing-shell[data-design="web3"] .marketing-timeline,
+body[data-marketing-design="web3"] [data-slot="dropdown-menu-content"] {
+    backdrop-filter: blur(18px);
+}
+
+.marketing-shell[data-design="web3"] [data-slot="button"][data-variant="default"] {
+    background-image: linear-gradient(135deg, hsl(186 100% 50%), hsl(281 95% 68%));
+    color: hsl(240 28% 8%);
+}
+
+.marketing-shell[data-design="web3"] [data-slot="button"][data-variant="outline"] {
+    border-color: hsl(var(--border));
+    background: hsl(var(--background) / 0.22);
+}
+
+.marketing-shell[data-design="web3"] .marketing-hero__badge {
+    box-shadow:
+      0 0 0 1px hsl(186 100% 50% / 0.24),
+      0 0 26px hsl(186 100% 50% / 0.14);
+}
+
+.marketing-shell[data-design="web3"] .marketing-pricing-card--featured {
+    background:
+      linear-gradient(180deg, hsl(240 24% 14% / 0.92), hsl(242 20% 11% / 0.88)),
+      linear-gradient(135deg, hsl(186 100% 50% / 0.1), hsl(281 95% 68% / 0.12));
+}
+
+.marketing-shell[data-design="terminal"] {
+    color: hsl(var(--foreground));
+}
+
+.marketing-shell[data-design="terminal"] .marketing-header,
+.marketing-shell[data-design="terminal"] .marketing-footer {
+    background: hsl(var(--background) / 0.9);
+}
+
+.marketing-shell[data-design="terminal"] .marketing-copy,
+.marketing-shell[data-design="terminal"] .marketing-note,
+.marketing-shell[data-design="terminal"] .marketing-hero__meta {
+    color: hsl(var(--muted-foreground));
+}
+
+.marketing-shell[data-design="terminal"] .marketing-hero__title {
+    text-shadow: 0 0 20px hsl(141 100% 67% / 0.16);
+}
+
+.marketing-shell[data-design="terminal"] .marketing-hero__badge {
+    box-shadow:
+      0 0 0 1px hsl(141 24% 28% / 0.9),
+      inset 0 0 0 1px hsl(141 100% 67% / 0.08);
+}
+
+.marketing-shell[data-design="terminal"] [data-slot="card"],
+.marketing-shell[data-design="terminal"] .marketing-table-shell,
+.marketing-shell[data-design="terminal"] .marketing-stack-card,
+.marketing-shell[data-design="terminal"] .marketing-ai-note,
+.marketing-shell[data-design="terminal"] .marketing-timeline,
+body[data-marketing-design="terminal"] [data-slot="dropdown-menu-content"] {
+    backdrop-filter: none;
+}
+
+.marketing-shell[data-design="terminal"] [data-slot="button"][data-variant="default"] {
+    background-image: linear-gradient(135deg, hsl(141 100% 67%), hsl(176 84% 62%));
+    color: hsl(145 30% 7%);
+}
+
+.marketing-shell[data-design="terminal"] [data-slot="button"][data-variant="outline"] {
+    border-color: hsl(var(--border));
+    background: hsl(var(--background) / 0.72);
+    color: hsl(var(--foreground));
+}
+
+.marketing-shell[data-design="terminal"] .marketing-feature-icon,
+.marketing-shell[data-design="terminal"] .marketing-ai-tool {
+    border: 1px solid hsl(var(--border));
+}
+
+@media (min-width: 768px) {
+  .marketing-shell[data-design] .marketing-ai-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: center;
+  }
+}

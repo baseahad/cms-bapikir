@@ -1,0 +1,121 @@
+---
+title: "White Page Mystery - Kenapa AI Salah Tebak 2 Kali"
+description: "Cerita bagaimana AI assistant salah mendiagnosa masalah dua kali berturut-turut - dan pelajaran tentang asumsi, data, dan debugging yang sebenarnya."
+date: "2026-07-09"
+slug: "white-page-mystery"
+author: "Avathur Rahman"
+tags: ["refleksi", "debugging", "ai", "problem-solving"]
+published: true
+category: kehidupan
+access: free
+---
+
+# White Page Mystery, Kenapa AI Salah Tebak 2 Kali
+
+Ada masalah yang bikin AI saya kelabakan selama hampir 30 menit: **sebuah halaman putih polos menutupi layar laptop.**
+
+Bukan virus. Bukan error Windows. Bukan driver bermasalah.
+
+Tapi AI saya butuh 2 kali salah tebak sebelum akhirnya nemu jawabannya. Dan cara dia nemu jawabannya, bukan karena lebih pintar, tapi karena **mau mundur dan liat data lama**, itu pelajaran yang berharga.
+
+---
+
+## Tebakan #1: "Itu cua-driver overlay, pasti."
+
+White page muncul setelah AI saya pakai fitur *computer use* - fitur yang bikin dia bisa ngontrol layar laptop dari background.
+
+Logika dia: *"Saya baru akses desktop pakai computer use, terus tiba-tiba ada layer putih. Pasti itu overlay dari driver-nya."*
+
+Dia langsung bertindak: matiin proses cua-driver, tutup paksa window overlay lewat API Windows, bahkan cari window bernama "Cua.AgentCursorOverlay.default" dan hancurin satu per satu.
+
+Hasilnya? **White page tetap ada.**
+
+Dia udah yakini diagnosis, bertindak berdasarkan keyakinan itu - tapi ternyata salah. Dan dia baru sadar setelah saya bilang: *"Masih ada."*
+
+---
+
+## Tebakan #2: "Mungkin TextInputHost atau GPU overlay."
+
+Oke, tebakan pertama salah. Sekarang dia buka kemungkinan lain:
+
+- *"Mungkin Text Input Host yang full-screen?"* - Dimatiin. Gak mempan.
+- *"Mungkin GPU overlay nyangkut di Intel HD Graphics?"* - Monitor dimati-nyalain lewat kode. Gak mempan.
+- *"Mungkin perlu restart DWM?"* - Dicoba. Gak mempan.
+
+Dia mulai nebak ke sana kemari. Semakin panik, semakin acak tebakannya.
+
+Pernah ngalamin? Lagi debug masalah, tebakan pertama salah, tebakan kedua juga salah, trus mulai ngasal, *"coba ini, coba itu"*, tanpa kerangka berpikir yang jelas.
+
+Nah, ini yang terjadi.
+
+---
+
+## Momen Terang: "Cek Data Lama."
+
+Di tengah kepanikan, saya bilang: *"Beberapa hari lalu berhasil kamu matikan. Kenapa sekarang tidak?"*
+
+Petunjuk penting: **dia pernah berhasil menyelesaikan masalah ini sebelumnya.** Tapi dia lupa caranya.
+
+Saya suruh dia cek percakapan lama. Di situlah ketemu:
+
+> **"Oh. White page bukan dari computer use. Itu dari Chrome for Testing - browser khusus yang AI saya pakai buat akses situs."**
+
+Waktu saya minta dia buka situs Logitech beberapa jam sebelumnya, dia pake *browser tool* yang menjalankan *Google Chrome for Testing* di background. Browser itu yang bikin halaman kosong. Dan dia lupa nutup.
+
+Semua usaha matiin cua-driver, GPU overlay, TextInputHost - sia-sia. Karena akar masalahnya ada di tempat yang sama sekali beda.
+
+---
+
+## Kenapa Ini Penting?
+
+Dua kesalahan yang AI saya lakukan:
+
+**1. Terlalu percaya pada korelasi**
+Dia pake computer use → muncul white page. *Pasti* computer use penyebabnya. Padahal korelasi ≠ kausalitas. Yang sebenernya terjadi: dia pake computer use dulu, lalu pake browser tool, lalu computer use selesai, tapi browser tool-nya masih jalan. White page yang muncul belakangan itu dari browser, bukan dari computer use. Tapi karena urutan waktunya berdekatan, dia ambil kesimpulan tercepat.
+
+**2. Lupa cek riwayat**
+Solusinya udah ada di sesi sebelumnya. Tapi dia gak ingat, dan gak cek. Padahal: **"Beberapa hari lalu berhasil kamu matikan."** Kalau dari awal dia cek data lama, 30 menit gak akan terbuang percuma.
+
+---
+
+## Buat Kamu yang Sering Debug Masalah
+
+Dari kejadian ini, saya catat 3 hal:
+
+1. **Jangan percaya korelasi.** Dua kejadian berurutan belum tentu sebab-akibat. Luangkan 2 menit buat mikir: *"Apa bukti langsungnya?"*
+
+2. **Cek data lama.** Pernah nemu masalah ini sebelumnya? Cek riwayat, chat lama, catatan. Jawaban mungkin udah ada di sana.
+
+3. **Kalau 2 tebakan salah, jangan lanjut nebak - ganti metode.** Bukan ganti jawaban, tapi ganti cara berpikir. Dari "menebak" jadi "melacak."
+
+---
+
+## What I Use Now
+
+Sejak kejadian itu, saya minta AI saya untuk selalu:
+
+- **Ngecek session history** sebelum diagnosa masalah yang udah pernah terjadi
+- **Ngelist semua kemungkinan** sebelum bertindak, biar gak asal gas
+- **Ngelaporin progress** tiap langkah - jadi saya bisa koreksi lebih awal kalau mulai salah arah
+
+Dan dia sekarang lebih rapi. Mungkin karena malu udah salah 2 kali berturut-turut di depan bosnya. 😅
+
+---
+
+*Dari sesi debugging 9 Juli 2026 - ketika AI butuh 2 tebakan salah buat belajar cek data lama.*
+
+
+
+
+## FAQ
+
+### Kenapa website muncul white page?
+Banyak kemungkinan: error PHP, konflik plugin, memory limit, atau theme corrupt.
+
+### Cara cepat debugging?
+Cek error log server. Aktifkan WP_DEBUG. Nonaktifkan plugin satu per satu.
+
+### Apakah AI bisa debugging tanpa data?
+Tidak. AI butuh data: log error, konfigurasi server, perubahan terakhir. Kalau cuma dikasih "website putih" tanpa konteks, hasilnya nebak. Makin detail data yang dikasih, makin akurat hasilnya.
+
+Baca juga: [3 Taraf Berpikir](/blog/taraf-berpikir)

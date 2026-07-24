@@ -1,0 +1,103 @@
+---
+title: "Cerita SSD Palsu dan Sebuah Perjalanan Upgrade"
+description: "Setahun lalu saya beli SSD 512GB. Seminggu lalu dia pamit tanpa pesan. Dua kali salah diagnosa sebelum nemu jawaban."
+slug: cerita-ssd-palsu-dan-perjalanan-upgrade
+date: 2026-07-15
+author: Avathur Rahman
+tags: [ssd, upgrade, laptop, troubleshooting, sceamer, mesa]
+published: true
+category: kehidupan
+access: free
+---
+
+Setahun lalu saya beli SSD 512GB. Seminggu lalu, dia pamit tanpa pesan.
+
+Bukan pamit pindah kerja. Pamit dalam arti sesungguhnya: mati total. Gak kedetek di BIOS, gak kedengeran di Windows, gak ada reaksi apa-apa. Seperti orang yang pergi tanpa pamit, tapi ini pamit lewat layar hitam.
+
+Lucu aja. Yang beli mahal-mahal, yang katanya Western Digital. Ternyata barang palsu made in China. Serial number-nya gak dikenal sama database resmi. Lima tahun garansi? Mana ada. Itu stiker doang.
+
+Tapi cerita ini bukan soal SSD palsu. Bukan juga soal bagaimana cara klaim garansi yang ternyata gak bisa. Cerita ini soal **dua kali salah diagnosa** sebelum nemu jawaban.
+
+## Salah yang Pertama: Nyalahin Server
+
+Sebelum SSD mati, saya udah punya masalah lain. Drive external E: (2TB) sering gak bisa diakses. Kadang bisa, kadang gak. Saya tanya ke bot AI yang biasa bantu kerja.
+
+Dia jawab: "Maaf, saya di server. Gak bisa akses drive E."
+
+Oh, berarti sistemnya jalan di server VPS, bukan di laptop. Masuk akal. Server mana bisa akses drive external yang colok di laptop?
+
+Dua minggu saya terima jawaban itu. Sampai suatu hari saya iseng-iseng ngecek konfigurasinya. Ternyata sistemnya jalan di **laptop saya sendiri**. Bukan di server apapun. Cuma beda sesi akses.
+
+Berarti kenapa drive E: gak bisa diakses? Karena drive external itu lagi tidur. Power management Windows-nya mematikan drive setelah beberapa menit gak dipake. Begitu diakses tiba-tiba, butuh 5-10 detik buat spin up. Dan sistemnya gak sabar nunggu.
+
+Error-nya: timeout. Interpretasi AI-nya: "saya di server."
+
+Dua minggu salah diagnosa gara-gara AI yang kegeeran ngasih alasan. Saya ketawa. Tapi sebenernya miris. Ini baru masalah pertama.
+
+## Salah yang Kedua: Nyalahin Drive
+
+Pas SSD C: mati total, reaksi pertama saya: "Ah, SSD murahan."
+
+Emang sih merk V-GEN 128GB, jelas SSD murce. Tapi minggu itu saya juga baru beli SSD WD 512GB yang ternyata palsu dan mati duluan. Jadi pikiran saya langsung: "Semua SSD barang jelek."
+
+Saya hampir beli HDD 2.5" bekas buat ganti. Untung aja saya tahan diri.
+
+Setelah riset, baru sadar: **bukan SSD-nya yang salah.** Saya yang asal pilih. Saya beli berdasarkan "merk terkenal" dan "harga murah", dua hal yang bertentangan. Gak pernah ngecek tipe NAND, gak pernah ngitung TBW, gak peduli DRAM cache. Asal colok, asal jalan.
+
+Ini pola yang sama kayak kasus drive E: tadi. Nyalahin alat, padahal yang salah cara pilih.
+
+## TLC vs QLC vs DRAM, Pelajaran Sederhana
+
+Saya duduk. Nulis. Cari tahu.
+
+Ternyata milih SSD bukan cuma soal "berapa GB" sama "SATA atau NVMe." Ada tiga hal yang bikin umur SSD panjang pendek:
+
+**NAND.** QLC (4 bit per sel) = irit duit, boros siklus tulis. TLC (3 bit per sel) = sedikit lebih mahal, tapi 3-4x lebih awet. SSD 1TB QLC bisa punya TBW 100-200TB. TLC bisa 400-600TB.
+
+**DRAM.** Ada SSD yang punya RAM cache sendiri. Ada yang gak punya (DRAM-less). Yang gak punya DRAM, performanya jeblok pas lagi transfer file gede, dan write amplification-nya naik, bikin cepet aus.
+
+**TBW.** Terabytes Written, seberapa banyak data yang bisa ditulis ke SSD sebelum dia pensiun. Gini aja: TBW 200TB buat orang yang nulis 20GB per hari = 27 tahun. Tapi TBW itu akumulasi, bukan per hari. Semakin besar semakin aman.
+
+Pelajaran ini sederhana. Tapi saya baru tahu setelah SSD pertama mati.
+
+## Masuk Sceamer, Evaluasi Pilihan
+
+Buat milih yang baru, saya pake Sceamer. Skornya 92%.
+
+Hasilnya:
+
+- **WD Blue SN580 1TB** (NVMe, TLC, 600 TBW) - buat C:
+- **Crucial MX500 1TB** (SATA, TLC, DRAM cache, 500 TBW) - buat D:
+- E: external 2TB - dibiarin, jadi backup doang
+
+Total duit keluar sekitar Rp2jutaan. Tapi umur proyeksinya? 15-20 tahun. Bandingin sama SSD palsu 512GB yang saya beli setahun lalu, 200 rebuan, 9 bulan nyawa.
+
+Murah itu mahal. Mahal di awal itu murah. Saya baru sadar sekarang.
+
+## Penutup, Dua Kali Salah, Akhirnya Sadar
+
+Dua kali salah diagnosa. Pertama saya kira server, ternyata power management. Kedua saya kira semua SSD jelek, ternyata cara pilih saya yang asal.
+
+Lucu. Saya debugging kode orang lain setiap hari, tapi debugging hardware sendiri bebannya lebih ke "capek mikir" daripada "capek riset."
+
+Akhirnya saya pahami: kebanyakan masalah itu bukan masalah alat. Masalahnya di **cara kita milih, cara kita pakai, dan cara kita bereaksi waktu alat itu ngadoain kita dengan error.**
+
+Saya gak akan bilang "beli SSD ini, jangan beli itu." Nanti bisa beda kebutuhan, beda laptop, beda rezeki. Tapi satu hal yang saya terapkan di MESA: sebelum beli apapun yang ada chip dan sirkuit, evaluasi dulu pake Sceamer.
+
+Biar gak ketipu dua kali.
+
+Baca juga: [Cara Pilih SSD agar Tidak Ketipu](/blog/cara-pilih-ssd-agar-tidak-ketipu)
+
+## FAQ
+
+**Apa beda SSD palsu dan asli dari segi fisik?**
+SSD palsu biasanya stiker dan casing mirip asli, beratnya beda tipis. Cara paling gampang: cek serial number di database resmi.
+
+**Apakah Sceamer framework berbayar?**
+Sceamer adalah framework evaluasi, gratis dipakai siapa aja.
+
+**Drive external tidur pengaruh ke umur?**
+Iya. Sering spin up/down lebih cepet aus daripada muter terus. Makin jarang spin cycle, makin awet bearing-nya.
+
+**Lebih baik beli SSD NVMe atau SATA?**
+Tergantung laptop. Kalau ada slot NVMe, pilih NVMe (lebih cepet). Kalau cuma ada SATA, SATA juga cukup buat data harian.

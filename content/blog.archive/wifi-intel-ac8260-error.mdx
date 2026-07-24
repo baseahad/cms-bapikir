@@ -1,0 +1,146 @@
+---
+title: "WiFi Sering Putus Tanda Seru? Cek Event Log, Mungkin Ini Penyebabnya"
+description: "Intel Wireless-AC 8260 error 'network adapter has returned an invalid value to the driver' - apa artinya dan gimana cara ngatasin."
+date: "2026-07-09"
+slug: "wifi-intel-ac8260-error"
+author: "Avathur Rahman"
+tags: ["wifi", "windows", "driver", "troubleshooting"]
+published: true
+category: teknis
+access: free
+---
+
+# WiFi Sering Putus Tanda Seru? Cek Event Log, Mungkin Ini Penyebabnya
+
+WiFi tiba-tiba putus. Icon tanda seru kuning muncul. Trus nyambung lagi sendiri. Beberapa menit kemudian, putus lagi.
+
+Pernah ngalamin? Kebanyakan orang akan:
+
+1. Restart modem
+2. Lupa password WiFi
+3. Reset jaringan
+4. Update driver (kalo ingat)
+
+Tapi kalau udah semua dicoba dan masih putus-putus? Mungkin jawabannya ada di tempat yang jarang dicek: **Windows Event Log.**
+
+---
+
+## Yang Ketemu Waktu Diagnosa
+
+Beberapa hari lalu, saya bantu diagnosa laptop Lenovo ThinkPad T470 yang sering freeze. Salah satu temuan di Event Viewer:
+
+```
+Log Name: System
+Source: Intel(R) Dual Band Wireless-AC 8260
+Event ID: 5010
+Level: Error
+Message: The network adapter has returned an invalid value to the driver.
+```
+
+Error ini muncul **3 kali dalam 24 jam** - artinya masalahnya berulang, bukan sekali doang.
+
+Ini artinya: **kartu WiFi ngirim data yang gak bisa dibaca sama drivernya.** Bisa karena driver korup, konflik listrik (power management), atau adapter-nya mulai bermasalah secara hardware.
+
+Tapi dari diagnosa lebih lanjut, semua mengarah ke satu penyebab utama: **Power Management.**
+
+---
+
+## Penyebab #1: Windows "Mematikan" WiFi untuk Hemat Daya
+
+Secara default, Windows punya fitur **Power Saving** buat adapter jaringan. Tujuannya baik: matiin adaptor kalau gak dipake biar hemat baterai.
+
+Masalahnya: fitur ini terlalu agresif. Kadang Windows "nidurin" adapter WiFi pas lagi dipake, pas lagi streaming, pas lagi panggilan Zoom, pas lagi upload file. Akibatnya:
+
+- WiFi putus mendadak
+- Adapter bingung - ngirim data invalid ke driver
+- Muncul error 5010
+- Trus nyambung lagi (setelah adapter dibangunin paksa)
+
+**Solusi termudah:** Matiin power saving buat adapter WiFi.
+
+1. Buka **Device Manager** (devmgmt.msc)
+2. Cari **Network adapters** → **Intel(R) Dual Band Wireless-AC 8260**
+3. Klik kanan → **Properties**
+4. Tab **Power Management**
+5. **Hilangkan centang** "Allow the computer to turn off this device to save power"
+6. Klik OK
+
+Ini nyelesain 80% kasus WiFi putus-putus di laptop.
+
+---
+
+## Penyebab #2: Driver Gak Update atau Konflik
+
+Driver Intel Wireless-AC 8260 versi lama punya bug yang bikin adapter ngirim nilai invalid. Solusinya: update driver atau rollback.
+
+**Cek versi driver sekarang:**
+1. Device Manager → Network adapters → Intel AC 8260 → Properties
+2. Tab **Driver** → lihat **Driver Version**
+
+**Bandingkan dengan versi terbaru:**
+- Kunjungi [Intel Support](https://www.intel.com/content/www/us/en/support/products/88355/wireless/intel-dual-band-wireless-ac-8260.html)
+- Cari versi terbaru untuk Windows 10/11 64-bit
+
+**Yang sering terjadi - versi OEM vs Generic:**
+Laptop Lenovo, Dell, HP sering pake driver custom dari pabriknya. Kadang versinya lebih tinggi dari driver Intel generic, kadang lebih rendah. Kalau pake driver Intel generic, kadang fitur tertentu (seperti power management) beda perilakunya.
+
+**Rekomendasi:** Coba kedua versi - driver OEM dari website Lenovo/Dell/HP, dan driver generic dari Intel. Pilih yang paling stabil buat pemakaian sehari-hari.
+
+---
+
+## Penyebab #3: Adapter Mulai Tua
+
+Intel Wireless-AC 8260 adalah adapter yang dirilis tahun 2015. Untuk laptop 2016-2017 (kaya ThinkPad T470), ini standar.
+
+Setelah 8-9 tahun, adapter wireless bisa mulai degradasi, terutama kalau laptop sering kepanasan atau adapter sering kena ESD (listrik statis).
+
+**Gejala adapter udah mau pensiun:**
+- Error 5010 makin sering, bahkan setelah power saving dimatiin dan driver diupdate
+- WiFi cuma bisa konek di jarak dekat
+- Kecepatan maksimal turun drastis (misal dari 300 Mbps jadi 150 Mbps)
+- Sering disconnect pas transfer data besar
+
+Kalau udah begini, solusinya: **ganti adapter.** Intel AX200 atau AX210 (WiFi 6) kompatible dengan ThinkPad T470 dan harganya cuma 100-200 ribuan.
+
+---
+
+## Bonus: Cek Event Log Lo Sendiri
+
+Mau cek apakah laptop lo punya error WiFi kayak gini?
+
+1. Klik kanan **Start** → **Event Viewer**
+2. Di kiri: **Windows Logs** → **System**
+3. Kanan: **Filter Current Log...**
+4. Di **Event sources:** ketik **"Intel"** atau **"Netw"**
+5. Klik OK
+6. Cari yang Level: **Error** atau **Warning**
+
+Kalau ada error 5010 berulang - lo tahu harus ngapain. 😉
+
+---
+
+## Ringkasan
+
+| Langkah | Gampang/Susah | Efek |
+|---------|:------------:|:----:|
+| Matiin power management | 🟢 Mudah | 80% kasus selesai |
+| Update driver | 🟡 Sedang | 10% kasus |
+| Ganti adapter WiFi | 🔴 Butuh tools | 10% kasus sisanya |
+
+Mulai dari yang paling gampang dulu. Error 5010 jarang sekali butuh ganti hardware.
+
+
+
+
+## FAQ
+
+### Apakah driver Intel AC 8260 bermasalah?
+Ya, chipset ini terkenal sering disconnect di Windows 10/11. Solusi: update driver atau ganti adapter.
+
+### Solusi permanen?
+Ganti ke adapter Intel AX series atau gunakan USB WiFi eksternal.
+
+### Kenapa error 5010 sering muncul?
+Error ini biasanya karena driver tidak cocok dengan versi Windows. Solusi paling ampuh: install driver versi lama yang stabil, bukan yang terbaru. Saya sendiri pake driver 19.50.1, lebih stabil daripada versi 20an.
+
+Baca juga: [3 Taraf Berpikir](/blog/taraf-berpikir)

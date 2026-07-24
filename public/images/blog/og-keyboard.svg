@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#1a4d3e"/>
+  <rect x="0" y="280" width="1200" height="2" fill="#d4a843" opacity="0.5"/>
+  <rect x="0" y="348" width="1200" height="1" fill="#d4a843" opacity="0.3"/>
+  <text x="80" y="180" font-family="serif" font-size="56" fill="#d4a843" font-weight="bold">Keyboard Laptop Rusak</text>
+  <text x="80" y="250" font-family="sans-serif" font-size="26" fill="#e8e0d0">3 Langkah Diagnosa</text>
+  <text x="80" y="330" font-family="sans-serif" font-size="16" fill="#a0c0b0">Jangan buru-buru ke service</text>
+  <text x="80" y="420" font-family="serif" font-size="20" fill="#c4a050">Avathur Rahman</text>
+  <text x="80" y="460" font-family="sans-serif" font-size="14" fill="#809080">avathur.id</text>
+</svg>

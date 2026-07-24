@@ -1,0 +1,143 @@
+---
+title: "Cara Pilih SSD Biar Gak Ketipu - Panduan dari Pembeli ke Pembeli"
+description: "Dari pengalaman nyaris beli SSD bekas yang disangka baru, sampe nemu cara cek toko, rating, dan garansi dalam 2 menit."
+date: "2026-07-09"
+slug: "cara-pilih-ssd-agar-tidak-ketipu"
+author: "Avathur Rahman"
+tags: ["ssd", "hardware", "tips", "upgrade", "laptop"]
+published: true
+category: teknis
+access: free
+---
+
+# Cara Pilih SSD Biar Gak Ketipu, Panduan dari Pembeli ke Pembeli
+
+Beberapa hari lalu saya nyari SSD buat laptop. 128 GB, penuh. Udah saatnya upgrade.
+
+Proses milihnya ternyata lebih rumit dari yang saya kira. Bukan karena gak ada pilihan, tapi karena **terlalu banyak** pilihan, dan hampir semuanya keliatan sama.
+
+Di artikel ini, saya tulis semua yang saya pelajari, biar lo gak perlu ngalamin kebingungan yang sama.
+
+---
+
+## Langkah 1: Tentukan Bentuk & Slot
+
+SSD itu bentuknya beda-beda. Salah beli bentuk = gak bisa dipasang.
+
+**Yang umum di laptop:**
+- **M.2 NVMe** - bentuk kayak permen karet, kecil, cepet. Ini yang paling umum di laptop 2016+
+- **M.2 SATA** - bentuk sama, tapi pake protokol lama. Lebih lambat
+- **2.5 inch SATA** - bentuk kotak, biasa di laptop lawas
+
+**Cek laptop lo:**
+1. Buka Task Manager → tab Performance
+2. Klik Disk 0 - lihat tulisannya: NVMe atau SATA?
+3. Kalo NVMe, beli M.2 NVMe. Kalo SATA, bisa M.2 SATA atau 2.5 inch
+
+**Yang sering salah:** orang beli M.2 NVMe padahal slotnya cuma M.2 SATA - atau sebaliknya. Dua-duanya M.2, bentuk sama, tapi protokol beda dan gak selalu kompatibel.
+
+---
+
+## Langkah 2: Kenali Generasi PCIe
+
+NVMe punya generasi:
+
+| Gen | Kecepatan | Tahun | Cocok buat |
+|:---:|:---------:|:-----:|------------|
+| PCIe 3.0 | ~3.500 MB/s | 2015 | Laptop 2015-2020 (ThinkPad T470, dll) |
+| PCIe 4.0 | ~5.000-7.000 MB/s | 2020 | Laptop 2020+ (PS5 juga pake ini) |
+| PCIe 5.0 | ~10.000+ MB/s | 2024 | PC high-end terbaru |
+
+**Yang penting:** Semua gen ini kompatibel mundur. PCIe 4.0 bisa dipasang di slot PCIe 3.0, tapi **kecepatannya turun** ke 3.0.
+
+Ini yang sering gak disadari orang: beli SSD Gen 4 mahal-mahal, tapi laptop cuma support Gen 3, kecepatannya sama aja dengan Gen 3 yang lebih murah.
+
+**Contoh nyata:**
+- Samsung 990 PRO (Gen 4, 7.450 MB/s) = Rp1.779.000
+- Samsung 990 EVO (Gen 4/5 hybrid, 5.000 MB/s) = Rp1.420.931
+
+Di ThinkPad T470 (PCIe 3.0), keduanya jalan di ~3.500 MB/s. **Sama aja.** Tapi beda harga Rp358rb.
+
+---
+
+## Langkah 3: Cek Kondisi Barang
+
+Ini jebakan terbesar. Beberapa hal yang perlu dicek:
+
+**Baru vs Bekas:**
+- SSD bekas ditulis "100%", "98%", "B9076", "B Grade" - ini kode buat barang second/refurbished
+- SSD baru harus ada **segel pabrik** dan **garansi resmi**
+- Beberapa toko jual SSD OEM (tanpa kotak, tanpa garansi resmi) - harganya miring, tapi resikonya tanggung sendiri
+
+**Garansi:**
+- **Garansi Resmi** - bisa klaim ke Samsung/Intel/WD langsung. Biasanya 3-5 tahun
+- **Garansi Toko** - klaim lewat toko. Resiko: tokonya tutup, lo boncos
+- **Tidak ada garansi** - jangan, kecuali lo siap kehilangan uang
+
+---
+
+## Langkah 4: Cek Toko
+
+Sebelum klik "Beli", cek 3 hal:
+
+| Cek | Keterangan | Target |
+|-----|------------|:------:|
+| Rating | Lihat di halaman toko | Minimal 4.8 ⭐ |
+| Transaksi | Berapa yang udah terjual | Minimal 50+ |
+| Badge | Power Merchant / Official Store | Ada salah satu |
+
+**Kalau ragu:** cari toko official distributornya. Buat Samsung: Enter Komputer, Vishay Pratama, atau toko dengan badge Samsung Official Store. Harganya mungkin selisih Rp50-100rb, tapi **100% aman.**
+
+---
+
+## Langkah 5: Bandingkan Harga per GB
+
+Cara paling fair buat bandingin SSD: **harga per GB.**
+
+| SSD | Harga | Kapasitas | Rp/GB |
+|-----|:-----:|:---------:|:-----:|
+| 970 EVO | Rp1.048.000 | 500 GB | **Rp2.096/GB** |
+| 990 EVO | Rp1.420.931 | 1.000 GB | **Rp1.421/GB** |
+| 990 PRO | Rp1.779.000 | 1.000 GB | **Rp1.779/GB** |
+
+970 EVO 500GB lebih murah secara nominal, tapi **lebih mahal per GB** daripada 990 EVO 1TB. Dan itu barang bekas.
+
+---
+
+## Ringkasan: 5 Langkah Sebelum Beli SSD
+
+```
+□ Cek bentuk slot (M.2 NVMe / M.2 SATA / 2.5 inch)
+□ Cek gen PCIe laptop (jangan bayar lebih buat kecepatan yang gak kepake)
+□ Cek kondisi barang (baru? bekas? garansi?)
+□ Cek toko (rating 4.8+, transaksi 50+, badge)
+□ Hitung harga per GB
+```
+
+---
+
+## Yang Saya Ambil
+
+Setelah semua langkah: **Samsung 990 EVO 1TB - Rp1.401.731 termasuk ongkir.**
+
+Karena:
+- Laptop saya PCIe 3.0 → 990 PRO gak berguna
+- 1TB lebih murah per GB daripada 500GB
+- Barang baru, garansi 5 tahun
+- Toko rating 4.8+, Power Merchant
+
+
+
+
+## FAQ
+
+### SSD NVMe atau SATA?
+NVMe lebih cepat 5-7x. Tapi pastikan laptop support NVMe.
+
+### Berapa kapasitas ideal?
+256 GB minimal untuk OS + aplikasi. 512 GB kalau sering bawa file besar.
+
+### SSD bekas worth it?
+Hati-hati. SSD punya usia tulis (TBW). Kalau sudah dipakai 2-3 tahun untuk rendering atau mining, umurnya tinggal sedikit. Lebih aman beli baru dengan garansi resmi.
+
+Baca juga: [Apa yang Bisa Kamu Kontrol?](/blog/daira)
