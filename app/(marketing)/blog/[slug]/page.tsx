@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: PageProps) {
     title: `${post.title} — Blog Avathur Rahman`,
     description: post.description || `Baca artikel ${post.title}`,
     path: `/blog/${slug}`,
+    image: post.cover_image || undefined,
   });
 }
 
