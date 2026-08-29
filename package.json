@@ -1,6 +1,6 @@
 {
   "private": true,
-  "license": "UNLICENSED",
+  "license": "BUSL-1.1",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,7 +11,10 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "e2e": "playwright test",
-    "e2e:headed": "playwright test --headed"
+    "e2e:headed": "playwright test --headed",
+    "license:keygen": "node ./scripts/license-cli.mjs keygen",
+    "license:issue": "node ./scripts/license-cli.mjs issue",
+    "license:verify": "node ./scripts/license-cli.mjs verify"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^3.0.58",

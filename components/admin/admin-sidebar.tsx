@@ -15,6 +15,7 @@ import {
   PenLineIcon,
   ImageIcon,
   CoinsIcon,
+  KeyRoundIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -70,6 +71,11 @@ const sidebarItems: SidebarItem[] = [
     label: "Waitlist",
     href: "/admin/waitlist",
     icon: <MailIcon className="h-4 w-4" />,
+  },
+  {
+    label: "Lisensi",
+    href: "/admin/license",
+    icon: <KeyRoundIcon className="h-4 w-4" />,
   },
   {
     label: "Pengaturan",

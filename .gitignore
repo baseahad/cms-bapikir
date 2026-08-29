@@ -52,3 +52,8 @@ e2e/.auth/
 
 .vercel
 .env*
+
+# license signing key artifacts (never commit)
+PROD-PRIVATE-KEY*
+DEV-PRIVATE-KEY*
+*-PRIVATE-KEY.jwk.b64

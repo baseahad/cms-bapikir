@@ -10,6 +10,7 @@ import { Source_Serif_4 as SourceSerifFont } from "next/font/google";
 
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "@/components/ui/sonner";
+import { LimitedModeBanner } from "@/components/license/limited-mode-banner";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 
@@ -76,6 +77,7 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <LimitedModeBanner />
           {children}
           <Toaster />
         </ThemeProvider>

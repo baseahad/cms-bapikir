@@ -23,7 +23,7 @@ export default function TermsPage() {
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Syarat &amp; Ketentuan</h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Terakhir diperbarui: 10 Juli 2026
+          Terakhir diperbarui: 29 Agustus 2026
         </p>
       </div>
 
@@ -37,8 +37,8 @@ export default function TermsPage() {
       <div className="space-y-8">
         <Section title="1. Layanan">
           <p>
-            {siteConfig.name} menyediakan boilerplate Next.js beserta akses dashboard, dokumentasi,
-            dan update yang termasuk dalam paket yang kamu pilih. Layanan ini diberikan
+            {siteConfig.name} menyediakan source code aplikasi Next.js beserta dokumentasi dan jendela
+            update sesuai tier lisensi yang kamu beli. Layanan ini diberikan
             &quot;sebagaimana adanya&quot; dan dapat berubah sewaktu-waktu dengan pemberitahuan.
           </p>
         </Section>
@@ -51,37 +51,57 @@ export default function TermsPage() {
           </p>
         </Section>
 
-        <Section title="3. Pembayaran dan Subscription">
+        <Section title="3. Pembayaran">
           <ul className="list-disc list-inside space-y-1 ml-2">
-            <li>Harga dalam Rupiah (IDR) dan termasuk PPN jika berlaku</li>
-            <li>Pembayaran lewat transfer manual ke rekening resmi, diverifikasi admin sebelum akses aktif</li>
-            <li>Subscription berlaku selama periode yang dipilih (bulanan/tahunan)</li>
-            <li>Tidak ada refund untuk periode yang sudah berjalan kecuali ada kesalahan teknis dari pihak kami</li>
+            <li>Harga dalam Rupiah (IDR) dan termasuk pajak yang berlaku</li>
+            <li>Pembayaran lewat transfer manual ke rekening resmi, diverifikasi admin sebelum license key diterbitkan</li>
+            <li>
+              Tier sekali-bayar berlaku permanen untuk versi yang tercakup dalam jendela update-nya;
+              tier berbasis langganan (mis. Agensi) berlaku selama periode aktif
+            </li>
+            <li>Tidak ada refund untuk license key yang sudah diterbitkan/diaktifkan kecuali ada kesalahan teknis dari pihak kami</li>
           </ul>
         </Section>
 
-        <Section title="4. Lisensi Penggunaan">
+        <Section title="4. Lisensi Perangkat Lunak">
           <p>
-            Dengan berlangganan, kamu mendapatkan lisensi non-eksklusif untuk menggunakan source code
-            {siteConfig.name} dalam proyek pribadi dan komersial. Kamu boleh:
+            Source code {siteConfig.name} dilisensikan di bawah{" "}
+            <strong>Business Source License 1.1 (BSL)</strong> — bukan lisensi open source. Teks
+            lengkap dan mengikat ada di file <strong>LICENSE</strong> pada repositori, dengan
+            penjelasan sehari-hari di <strong>LICENSING.md</strong>. Ringkasnya:
           </p>
           <ul className="list-disc list-inside space-y-1 ml-2">
-            <li>Menggunakan boilerplate untuk jumlah proyek sesuai paket kamu</li>
-            <li>Memodifikasi dan menyesuaikan kode sesuai kebutuhan</li>
-            <li>Menggunakan dalam proyek klien (untuk paket yang mengizinkan)</li>
+            <li>Kode bersifat source-available: boleh dibaca, diaudit, di-fork, dan dimodifikasi.</li>
+            <li>
+              Penggunaan non-produksi — pengembangan, pengujian, evaluasi, audit keamanan, dan demo
+              di lingkungan non-publik — tidak memerlukan pembayaran.
+            </li>
+            <li>
+              Menjalankan {siteConfig.name} untuk situs atau aplikasi yang diakses publik atau klien
+              adalah penggunaan produksi dan memerlukan license key komersial yang sah dari kami,
+              sesuai tier yang dibeli.
+            </li>
+            <li>
+              Setiap versi otomatis beralih ke Apache License 2.0 pada Change Date-nya — empat tahun
+              setelah versi itu dirilis.
+            </li>
+            <li>
+              Dilarang mendistribusikan ulang atau menjual kembali source code ini, atau mengemasnya
+              sebagai produk boilerplate/template milikmu.
+            </li>
           </ul>
-          <p>Kamu tidak boleh:</p>
-          <ul className="list-disc list-inside space-y-1 ml-2">
-            <li>Mendistribusikan ulang atau menjual kembali source code</li>
-            <li>Mengklaim sebagai karya original kamu untuk dijual sebagai boilerplate</li>
-          </ul>
+          <p>
+            Jika ada pertentangan antara halaman ini dan file <strong>LICENSE</strong>, yang berlaku
+            adalah file <strong>LICENSE</strong>.
+          </p>
         </Section>
 
         <Section title="5. Hak Kekayaan Intelektual">
           <p>
-            Brand, logo, dan konten {siteConfig.name} adalah milik kami. Source code boilerplate
-            dilisensikan kepada kamu, bukan dijual. Semua library pihak ketiga tunduk pada lisensi
-            masing-masing.
+            Merek, nama, logo, dan konten {siteConfig.name} tetap milik kami dan tidak termasuk dalam
+            lisensi mana pun di atas, termasuk setelah Change Date. Source code dilisensikan kepadamu
+            di bawah BSL 1.1 (lihat bagian 4), bukan dialihkan kepemilikannya. Seluruh library pihak
+            ketiga tunduk pada lisensinya masing-masing.
           </p>
         </Section>
 
