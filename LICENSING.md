@@ -33,16 +33,26 @@ tanggung jawab, dan hukum yang berlaku).
 - Menawarkan CMS Bapikir sebagai layanan hosting/SaaS ke pihak ketiga tanpa perjanjian terpisah dengan Licensor.
 - Memakai nama, merek, atau logo "CMS Bapikir" / "Bapikir" untuk produk pesaing.
 
-## Tier Lisensi (draf — angka diisi Avathur)
+## Tier Lisensi
+
+Harga dikalibrasi ke daya beli Indonesia — jauh di bawah boilerplate Next.js luar
+(ShipFast, Makerkit: USD 199–299 sekali bayar). Pembayaran transfer manual via
+MALIYA CENTER, tanpa gateway fee-persentase.
 
 | Tier | Untuk | Batas proyek | Harga |
 |---|---|---|---|
-| **Pribadi** | 1 website milik sendiri | 1 instance produksi | `Rp____` sekali bayar |
-| **Studio** | Freelancer / agensi kecil | s.d. 5 proyek klien | `Rp____` sekali bayar |
-| **Agensi** | Agensi | proyek tidak dibatasi | `Rp____` / tahun |
+| **Pribadi** | 1 website milik sendiri | 1 instance produksi | **Rp 490.000** sekali bayar |
+| **Studio** | Freelancer / agensi kecil | s.d. 5 proyek klien | **Rp 1.490.000** sekali bayar |
+| **Agensi** | Agensi / studio | proyek tidak dibatasi | **Rp 3.900.000 / tahun** |
 
-Update & support: `____` bulan update termasuk; perpanjangan `____`.
-(Sesuaikan dengan pricing page resmi — halaman ini menyusul angka final.)
+**Update & support:** 12 bulan update fitur termasuk di semua tier. Setelah itu
+aplikasi **tetap berjalan selamanya** untuk versi yang sudah tercakup — perpanjangan
+update bersifat opsional: **Rp 250.000/tahun** (Pribadi), **Rp 690.000/tahun** (Studio).
+Tier Agensi: update mengikuti masa langganan yang aktif.
+
+> Angka di atas titik awal, bisa disesuaikan lewat pricing page resmi. Diskon
+> pengenalan / harga khusus lembaga dakwah non-profit diatur terpisah — hubungi
+> lisensi@avathur.id.
 
 ## Cara Kerja License Key
 
@@ -63,5 +73,6 @@ Implementasi: `lib/license/*` (verifikasi + gerbang), `scripts/license-cli.mjs` 
 
 ## Hubungan dengan `LICENSE.md` lama
 
-`LICENSE.md` (proprietary "licensed, not sold") **digantikan** oleh file `LICENSE` (BSL) ini per rilis
-`v____`. Pembeli lisensi lama tetap dihormati sesuai syarat saat mereka membeli.
+`LICENSE.md` (proprietary "licensed, not sold") **digantikan** oleh file `LICENSE` (BSL) ini
+sejak rilis pertama CMS Bapikir di bawah BSL (Agustus 2026). Pembeli lisensi lama tetap
+dihormati sesuai syarat saat mereka membeli.
